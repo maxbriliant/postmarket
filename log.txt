@@ -1,0 +1,1553 @@
+(065667) [18:11:35] Location of the 'work' path. Multiple chroots (native, device arch, device rootfs) will be created in there.
+[18:11:35] Work path [/home/jack/prog/pm] /home/jack/prog/pm
+(065667) [18:11:36] Save config: /home/jack/.config/pmbootstrap.cfg
+(065667) [18:11:36] WARNING: Your work folder version needs to be migrated (from version 0 to 4)!
+(065667) [18:11:36] Changelog:
+(065667) [18:11:36] * Building chroots have a different username (#709)
+(065667) [18:11:36] Migration will do the following:
+(065667) [18:11:36] * Zap your chroots
+(065667) [18:11:36] * Adjust '/home/jack/prog/pm/config_abuild/abuild.conf'
+[18:11:36] Continue? (y/n) [n] y
+(065667) [18:11:38] Shutdown complete
+(065667) [18:11:38] Calculate work folder size
+(065667) [18:11:38] % sudo du --summarize --block-size=1 /home/jack/prog/pm
+12288	/home/jack/prog/pm
+(065667) [18:11:38] Shutdown complete
+(065667) [18:11:38] % sudo du --summarize --block-size=1 /home/jack/prog/pm
+12288	/home/jack/prog/pm
+(065667) [18:11:38] Cleared up ~0 MB of space
+(065667) [18:11:38] Migration to version 1 done
+(065667) [18:11:38] Changelog:
+(065667) [18:11:38] * Fix: cache_distfiles was writable for everyone
+(065667) [18:11:38] Migration will do the following:
+(065667) [18:11:38] * Fix permissions of '/home/jack/prog/pm/cache_distfiles'
+[18:11:38] Continue? (y/n) [n] n
+(065667) [18:11:39] ERROR: Aborted.
+(065667) [18:11:39] See also: <https://postmarketos.org/troubleshooting>
+(065667) [18:11:39] Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/pmb/__init__.py", line 33, in main
+    return config_init.frontend(args)
+  File "/usr/lib/python3.8/site-packages/pmb/config/init.py", line 347, in frontend
+    pmb.helpers.other.migrate_work_folder(args)
+  File "/usr/lib/python3.8/site-packages/pmb/helpers/other.py", line 116, in migrate_work_folder
+    raise RuntimeError("Aborted.")
+RuntimeError: Aborted.
+
+(065685) [18:11:41] Location of the 'work' path. Multiple chroots (native, device arch, device rootfs) will be created in there.
+[18:11:41] Work path [/home/jack/prog/pm] /home/jack/prog/pm
+(065685) [18:11:43] Save config: /home/jack/.config/pmbootstrap.cfg
+(065685) [18:11:43] WARNING: Your work folder version needs to be migrated (from version 1 to 4)!
+(065685) [18:11:43] Changelog:
+(065685) [18:11:43] * Fix: cache_distfiles was writable for everyone
+(065685) [18:11:43] Migration will do the following:
+(065685) [18:11:43] * Fix permissions of '/home/jack/prog/pm/cache_distfiles'
+[18:11:43] Continue? (y/n) [n] n
+(065685) [18:11:52] ERROR: Aborted.
+(065685) [18:11:52] See also: <https://postmarketos.org/troubleshooting>
+(065685) [18:11:52] Traceback (most recent call last):
+  File "/usr/lib/python3.8/site-packages/pmb/__init__.py", line 33, in main
+    return config_init.frontend(args)
+  File "/usr/lib/python3.8/site-packages/pmb/config/init.py", line 347, in frontend
+    pmb.helpers.other.migrate_work_folder(args)
+  File "/usr/lib/python3.8/site-packages/pmb/helpers/other.py", line 116, in migrate_work_folder
+    raise RuntimeError("Aborted.")
+RuntimeError: Aborted.
+
+(065687) [18:11:54] Location of the 'work' path. Multiple chroots (native, device arch, device rootfs) will be created in there.
+[18:11:54] Work path [/home/jack/prog/pm] /home/jack/prog/pm
+(065687) [18:11:55] Save config: /home/jack/.config/pmbootstrap.cfg
+(065687) [18:11:55] WARNING: Your work folder version needs to be migrated (from version 1 to 4)!
+(065687) [18:11:55] Changelog:
+(065687) [18:11:55] * Fix: cache_distfiles was writable for everyone
+(065687) [18:11:55] Migration will do the following:
+(065687) [18:11:55] * Fix permissions of '/home/jack/prog/pm/cache_distfiles'
+[18:11:55] Continue? (y/n) [n] y
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/chroot_native/dev
+(065687) [18:11:58] % sudo mount -t tmpfs -o size=1M,noexec,dev tmpfs /home/jack/prog/pm/chroot_native/dev
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/chroot_native/dev/pts /home/jack/prog/pm/chroot_native/dev/shm
+(065687) [18:11:58] % sudo mount -t tmpfs -o nodev,nosuid,noexec tmpfs /home/jack/prog/pm/chroot_native/dev/shm
+(065687) [18:11:58] % sudo mknod -m 666 /home/jack/prog/pm/chroot_native/dev/null c 1 3
+(065687) [18:11:58] % sudo mknod -m 666 /home/jack/prog/pm/chroot_native/dev/zero c 1 5
+(065687) [18:11:58] % sudo mknod -m 666 /home/jack/prog/pm/chroot_native/dev/full c 1 7
+(065687) [18:11:58] % sudo mknod -m 644 /home/jack/prog/pm/chroot_native/dev/random c 1 8
+(065687) [18:11:58] % sudo mknod -m 644 /home/jack/prog/pm/chroot_native/dev/urandom c 1 9
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/chroot_native/proc
+(065687) [18:11:58] % sudo mount --bind /proc /home/jack/prog/pm/chroot_native/proc
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/cache_apk_x86_64
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/chroot_native/var/cache/apk
+(065687) [18:11:58] % sudo mount --bind /home/jack/prog/pm/cache_apk_x86_64 /home/jack/prog/pm/chroot_native/var/cache/apk
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/cache_ccache_x86_64
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-ccache
+(065687) [18:11:58] % sudo mount --bind /home/jack/prog/pm/cache_ccache_x86_64 /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-ccache
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/cache_distfiles
+(065687) [18:11:58] % sudo mkdir -p /home/jack/prog/pm/chroot_native/var/cache/distfiles
+(065687) [18:11:58] % sudo mount --bind /home/jack/prog/pm/cache_distfiles /home/jack/prog/pm/chroot_native/var/cache/distfiles
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-git
+(065687) [18:11:59] % sudo mount --bind /home/jack/prog/pm/cache_git /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-git
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/cache_rust
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-rust
+(065687) [18:11:59] % sudo mount --bind /home/jack/prog/pm/cache_rust /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-rust
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/config_abuild
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-abuild-config
+(065687) [18:11:59] % sudo mount --bind /home/jack/prog/pm/config_abuild /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-abuild-config
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/config_apk_keys
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/chroot_native/etc/apk/keys
+(065687) [18:11:59] % sudo mount --bind /home/jack/prog/pm/config_apk_keys /home/jack/prog/pm/chroot_native/etc/apk/keys
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/packages
+(065687) [18:11:59] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-packages
+(065687) [18:11:59] % sudo mount --bind /home/jack/prog/pm/packages /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-packages
+(065687) [18:11:59] APKINDEX outdated (file does not exist yet): http://postmarketos1.brixit.nl/postmarketos/master/x86_64/APKINDEX.tar.gz
+(065687) [18:11:59] APKINDEX outdated (file does not exist yet): http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+(065687) [18:11:59] APKINDEX outdated (file does not exist yet): http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+(065687) [18:11:59] APKINDEX outdated (file does not exist yet): http://dl-cdn.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+(065687) [18:11:59] Update package index for x86_64 (4 file(s))
+(065687) [18:11:59] % mkdir -p /home/jack/prog/pm/cache_http
+(065687) [18:11:59] Download http://postmarketos1.brixit.nl/postmarketos/master/x86_64/APKINDEX.tar.gz
+(065687) [18:11:59] % sudo cp /home/jack/prog/pm/cache_http/APKINDEX_82f4e91ad45607a0f5d4d39ff6824bc49ebe5a431f60836f8ba0448c906a07f4 /home/jack/prog/pm/cache_apk_x86_64/APKINDEX.3f9c67ba.tar.gz
+(065687) [18:11:59] Download http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz
+(065687) [18:12:00] % sudo cp /home/jack/prog/pm/cache_http/APKINDEX_b36af8b1d7f948f0d2fcae5bd60c1b876620e69b987bc066e7a90c810687e76f /home/jack/prog/pm/cache_apk_x86_64/APKINDEX.066df28d.tar.gz
+(065687) [18:12:00] Download http://dl-cdn.alpinelinux.org/alpine/edge/community/x86_64/APKINDEX.tar.gz
+(065687) [18:12:00] % sudo cp /home/jack/prog/pm/cache_http/APKINDEX_0999dbfe3755729bd8aa3997d03dbd36a87187a19b61ce5cea2e01671a6305d6 /home/jack/prog/pm/cache_apk_x86_64/APKINDEX.b53994b4.tar.gz
+(065687) [18:12:00] Download http://dl-cdn.alpinelinux.org/alpine/edge/testing/x86_64/APKINDEX.tar.gz
+(065687) [18:12:01] % sudo cp /home/jack/prog/pm/cache_http/APKINDEX_6ccac8825a1621fb204ad4b3e645b24ffd8fa9acfe97edc265646cafd18d3e4c /home/jack/prog/pm/cache_apk_x86_64/APKINDEX.30e6f5af.tar.gz
+(065687) [18:12:01] Download http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/apk-tools-static-2.10.5-r0.apk
+(065687) [18:12:02] sigfilename: sbin/apk.static.SIGN.RSA.alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(065687) [18:12:02] sigkey: alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(065687) [18:12:02] extracted: /tmp/pmbootstrapyofd81gaapk
+(065687) [18:12:02] extracted: /tmp/pmbootstrap5ge_tedfsig
+(065687) [18:12:02] Verify apk.static signature with /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(065687) [18:12:02] % openssl dgst -sha1 -verify /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub -signature /tmp/pmbootstrap5ge_tedfsig /tmp/pmbootstrapyofd81gaapk
+Verified OK
+(065687) [18:12:02] Verify the version reported by the apk.static binary (must match the package version 2.10.5-r0)
+(065687) [18:12:02] % /tmp/pmbootstrapyofd81gaapk --version
+apk-tools 2.10.5, compiled for x86_64.
+(065687) [18:12:02] (native) install alpine-base
+(065687) [18:12:02] % sudo ln -s -f /var/cache/apk /home/jack/prog/pm/chroot_native/etc/apk/cache
+(065687) [18:12:02] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5243ef4b.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(065687) [18:12:02] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58e4f17d.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(065687) [18:12:02] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/build.postmarketos.org.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(065687) [18:12:02] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(065687) [18:12:02] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-524d27bb.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(065687) [18:12:02] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(065687) [18:12:02] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58199dcc.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(065687) [18:12:02] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58cbb476.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(065687) [18:12:02] % sudo cp /etc/resolv.conf /home/jack/prog/pm/chroot_native/etc/resolv.conf
+(065687) [18:12:02] % sudo mkdir -p /home/jack/prog/pm/chroot_native/etc/apk
+(065687) [18:12:02] (native) update /etc/apk/repositories
+(065687) [18:12:02] % sudo sh -c echo /mnt/pmbootstrap-packages >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(065687) [18:12:02] % sudo sh -c echo http://postmarketos1.brixit.nl/postmarketos/master >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(065687) [18:12:02] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/main >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(065687) [18:12:02] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(065687) [18:12:02] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(065687) [18:12:02] % sudo /home/jack/prog/pm/apk.static --no-progress --root /home/jack/prog/pm/chroot_native --cache-dir /home/jack/prog/pm/cache_apk_x86_64 --initdb --arch x86_64 add alpine-base
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+(1/19) Installing musl (1.1.24-r6)
+(2/19) Installing busybox (1.31.1-r14)
+Executing busybox-1.31.1-r14.post-install
+(3/19) Installing alpine-baselayout (3.2.0-r5)
+Executing alpine-baselayout-3.2.0-r5.pre-install
+Executing alpine-baselayout-3.2.0-r5.post-install
+(4/19) Installing openrc (0.42.1-r8)
+Executing openrc-0.42.1-r8.post-install
+(5/19) Installing alpine-conf (3.8.3-r7)
+(6/19) Installing libcrypto1.1 (1.1.1g-r0)
+(7/19) Installing libssl1.1 (1.1.1g-r0)
+(8/19) Installing ca-certificates-bundle (20191127-r2)
+(9/19) Installing libtls-standalone (2.9.1-r1)
+(10/19) Installing ssl_client (1.31.1-r14)
+(11/19) Installing zlib (1.2.11-r3)
+(12/19) Installing apk-tools (2.10.5-r0)
+(13/19) Installing busybox-suid (1.31.1-r14)
+(14/19) Installing busybox-initscripts (3.2-r2)
+Executing busybox-initscripts-3.2-r2.post-install
+(15/19) Installing scanelf (1.2.5-r2)
+(16/19) Installing musl-utils (1.1.24-r6)
+(17/19) Installing libc-utils (0.7.2-r3)
+(18/19) Installing alpine-keys (2.2-r0)
+(19/19) Installing alpine-base (3.12_alpha20200319-r0)
+Executing busybox-1.31.1-r14.trigger
+OK: 8 MiB in 19 packages
+(065687) [18:12:04] (native) % adduser -D pmos -u 12345
+(065687) [18:12:04] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-abuild-config /home/pmos/.abuild
+(065687) [18:12:04] (native) % chown pmos:pmos /mnt/pmbootstrap-abuild-config
+(065687) [18:12:04] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-ccache /home/pmos/.ccache
+(065687) [18:12:04] (native) % chown pmos:pmos /mnt/pmbootstrap-ccache
+(065687) [18:12:04] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/packages
+(065687) [18:12:04] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-packages /home/pmos/packages/pmos
+(065687) [18:12:05] (native) % chown pmos:pmos /mnt/pmbootstrap-packages
+(065687) [18:12:05] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/.cargo/registry
+(065687) [18:12:05] (native) % mkdir -p /mnt/pmbootstrap-rust/registry/index
+(065687) [18:12:05] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-rust/registry/index /home/pmos/.cargo/registry/index
+(065687) [18:12:05] (native) % chown pmos:pmos /mnt/pmbootstrap-rust/registry/index
+(065687) [18:12:05] (native) % mkdir -p /mnt/pmbootstrap-rust/registry/cache
+(065687) [18:12:05] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-rust/registry/cache /home/pmos/.cargo/registry/cache
+(065687) [18:12:05] (native) % chown pmos:pmos /mnt/pmbootstrap-rust/registry/cache
+(065687) [18:12:05] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/.cargo/git
+(065687) [18:12:05] (native) % mkdir -p /mnt/pmbootstrap-rust/git/db
+(065687) [18:12:05] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-rust/git/db /home/pmos/.cargo/git/db
+(065687) [18:12:05] (native) % chown pmos:pmos /mnt/pmbootstrap-rust/git/db
+(065687) [18:12:05] (native) % chown -R root:abuild /var/cache/distfiles
+(065687) [18:12:05] (native) % chmod -R 664 /var/cache/distfiles
+(065687) [18:12:05] (native) % chmod a+X /var/cache/distfiles
+(065687) [18:12:05] Migration to version 2 done
+(065687) [18:12:05] Changelog:
+(065687) [18:12:05] * Device chroots have a different user UID (#1576)
+(065687) [18:12:05] Migration will do the following:
+(065687) [18:12:05] * Zap your chroots
+[18:12:05] Continue? (y/n) [n] y
+(065687) [18:12:13] % sudo umount /home/jack/prog/pm/chroot_native/var/cache/distfiles
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/var/cache/apk
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/proc
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-rust
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-packages
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-git
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-ccache
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-abuild-config
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/etc/apk/keys
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/dev/shm
+(065687) [18:12:14] % sudo umount /home/jack/prog/pm/chroot_native/dev
+(065687) [18:12:14] Shutdown complete
+(065687) [18:12:14] Calculate work folder size
+(065687) [18:12:14] % sudo du --summarize --block-size=1 /home/jack/prog/pm
+21458944	/home/jack/prog/pm
+(065687) [18:12:14] Shutdown complete
+(065687) [18:12:14] % rm -rf /home/jack/prog/pm/chroot_native
+(065687) [18:12:14] % sudo rm -rf /home/jack/prog/pm/chroot_native
+(065687) [18:12:14] % sudo du --summarize --block-size=1 /home/jack/prog/pm
+12382208	/home/jack/prog/pm
+(065687) [18:12:14] Cleared up ~9 MB of space
+(065687) [18:12:14] Migration to version 3 done
+(065687) [18:12:14] Changelog:
+(065687) [18:12:14] * pmbootstrap clones repositories with host system's
+(065687) [18:12:14]   'git' instead of using it from an Alpine chroot
+(065687) [18:12:14] Migration will do the following:
+(065687) [18:12:14] * Check if 'git' is installed
+(065687) [18:12:14] * Change ownership to your user: /home/jack/prog/pm/cache_git
+[18:12:14] Continue? (y/n) [n] y
+(065687) [18:12:24] % sudo chown -R 1000:1000 /home/jack/prog/pm/cache_git
+(065687) [18:12:24] Migration to version 4 done
+(065687) [18:12:24] NOTE: pmaports path: /home/jack/.local/var/pmbootstrap/cache_git/pmaports
+(065687) [18:12:24] Choose your target device vendor (either an existing one, or a new one for porting).
+(065687) [18:12:24] Available vendors (48): alcatel, amazon, asus, bq, chuwi, fairphone, finepower, fujitsu, google, gp, hisense, htc, huawei, infocus, jolla, leeco, lenovo, lg, medion, meizu, motorola, nextbit, nobby, nokia, oneplus, oppo, ouya, pine64, planet, purism, qemu, raspberry, samsung, semc, sharp, sony, surftab, t2m, tablet, teclast, tokio, wiko, wileyfox, wingtech, xiaomi, yu, zte, zuk
+[18:12:24] Vendor [qemu] qemu
+(065687) [18:12:26] Available codenames (2): aarch64, amd64
+[18:12:26] Device codename [aarch64] aarch64
+(065687) [18:12:27] Which kernel do you want to use with your device?
+(065687) [18:12:27] Available kernels (2):
+(065687) [18:12:27] * lts: Alpine LTS kernel
+(065687) [18:12:27] * virt: Alpine Virt kernel (minimal, no audio)
+[18:12:27] Kernel [lts] lts
+[18:12:29] Username [jack] jack
+(065687) [18:12:30] Available user interfaces (12): 
+(065687) [18:12:30] * none: No graphical environment
+(065687) [18:12:30] * gnome: (Wayland) Gnome Shell (not for armhf)
+(065687) [18:12:30] * i3wm: (X11) Tiling WM (keyboard required)
+(065687) [18:12:30] * kodi: (Wayland) 10-foot UI useful on TV's
+(065687) [18:12:30] * mate: (X11) MATE Desktop Environment, fork of GNOME2 (stylus recommended)
+(065687) [18:12:30] * phosh: (Wayland) Mobile UI developed for the Librem 5 (works only with numeric passwords!)
+(065687) [18:12:30] * plasma-desktop: (X11/Wayland) KDE Desktop Environment (works well with tablets)
+(065687) [18:12:30] * plasma-mobile: (Wayland) Mobile variant of KDE Plasma (slow without hardware acceleration, allows only numeric passwords!)
+(065687) [18:12:30] * plasma-mobile-extras: Plasma Mobile with more apps pre-installed (video and music players, pdf reader, etc.)
+(065687) [18:12:30] * shelli: Plain console with touchscreen gesture support
+(065687) [18:12:30] * sway: (Wayland) Tiling WM, drop-in replacement for i3wm (DOES NOT RUN WITHOUT HW ACCELERATION!)
+(065687) [18:12:30] * weston: (Wayland) Reference compositor (demo, not a phone interface)
+(065687) [18:12:30] * xfce4: (X11) Lightweight GTK+2 desktop (stylus recommended)
+[18:12:30] User interface [mate] plasma-mobile
+(065687) [18:12:46] Build options: Parallel jobs: 14, ccache per arch: 5G
+[18:12:46] Change them? (y/n) [n] n
+(065687) [18:12:55] Additional packages that will be installed to rootfs. Specify them in a comma separated list (e.g.: vim,file) or "none"
+[18:12:55] Extra packages [gnome-terminal,android-tools] gnome-terminal,android-tools
+(065687) [18:13:01] Your host timezone: Europe/Helsinki
+[18:13:01] Use this timezone instead of GMT? (y/n) [y] y
+[18:13:02] Device hostname (short form, e.g. 'foo') [qemu] qemu
+(065687) [18:13:03] Save config: /home/jack/.config/pmbootstrap.cfg
+(065687) [18:13:03] WARNING: The chroots and git repositories in the work dir do not get updated automatically.
+(065687) [18:13:03] Run 'pmbootstrap status' once a day before working with pmbootstrap to make sure that everything is up-to-date.
+(065687) [18:13:03] Done!
+(066485) [18:13:10] *** (1/5) PREPARE NATIVE CHROOT ***
+(066485) [18:13:10] NOTE: Skipped apk version check for chroot 'native', because it is not installed yet!
+(066485) [18:13:10] % sudo mkdir -p /home/jack/prog/pm/chroot_native/dev
+(066485) [18:13:10] % sudo mount -t tmpfs -o size=1M,noexec,dev tmpfs /home/jack/prog/pm/chroot_native/dev
+(066485) [18:13:10] % sudo mkdir -p /home/jack/prog/pm/chroot_native/dev/pts /home/jack/prog/pm/chroot_native/dev/shm
+(066485) [18:13:11] % sudo mount -t tmpfs -o nodev,nosuid,noexec tmpfs /home/jack/prog/pm/chroot_native/dev/shm
+(066485) [18:13:11] % sudo mknod -m 666 /home/jack/prog/pm/chroot_native/dev/null c 1 3
+(066485) [18:13:11] % sudo mknod -m 666 /home/jack/prog/pm/chroot_native/dev/zero c 1 5
+(066485) [18:13:11] % sudo mknod -m 666 /home/jack/prog/pm/chroot_native/dev/full c 1 7
+(066485) [18:13:11] % sudo mknod -m 644 /home/jack/prog/pm/chroot_native/dev/random c 1 8
+(066485) [18:13:11] % sudo mknod -m 644 /home/jack/prog/pm/chroot_native/dev/urandom c 1 9
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/proc
+(066485) [18:13:11] % sudo mount --bind /proc /home/jack/prog/pm/chroot_native/proc
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/var/cache/apk
+(066485) [18:13:11] % sudo mount --bind /home/jack/prog/pm/cache_apk_x86_64 /home/jack/prog/pm/chroot_native/var/cache/apk
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-ccache
+(066485) [18:13:11] % sudo mount --bind /home/jack/prog/pm/cache_ccache_x86_64 /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-ccache
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/var/cache/distfiles
+(066485) [18:13:11] % sudo mount --bind /home/jack/prog/pm/cache_distfiles /home/jack/prog/pm/chroot_native/var/cache/distfiles
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-git
+(066485) [18:13:11] % sudo mount --bind /home/jack/prog/pm/cache_git /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-git
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-rust
+(066485) [18:13:11] % sudo mount --bind /home/jack/prog/pm/cache_rust /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-rust
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-abuild-config
+(066485) [18:13:11] % sudo mount --bind /home/jack/prog/pm/config_abuild /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-abuild-config
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/etc/apk/keys
+(066485) [18:13:11] % sudo mount --bind /home/jack/prog/pm/config_apk_keys /home/jack/prog/pm/chroot_native/etc/apk/keys
+(066485) [18:13:11] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-packages
+(066485) [18:13:11] % sudo mount --bind /home/jack/prog/pm/packages /home/jack/prog/pm/chroot_native/mnt/pmbootstrap-packages
+(066485) [18:13:11] sigfilename: sbin/apk.static.SIGN.RSA.alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(066485) [18:13:11] sigkey: alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(066485) [18:13:12] extracted: /tmp/pmbootstrapw4ke1if9apk
+(066485) [18:13:12] extracted: /tmp/pmbootstrapc8p570ussig
+(066485) [18:13:12] Verify apk.static signature with /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(066485) [18:13:12] % openssl dgst -sha1 -verify /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub -signature /tmp/pmbootstrapc8p570ussig /tmp/pmbootstrapw4ke1if9apk
+Verified OK
+(066485) [18:13:12] Verify the version reported by the apk.static binary (must match the package version 2.10.5-r0)
+(066485) [18:13:12] % /tmp/pmbootstrapw4ke1if9apk --version
+apk-tools 2.10.5, compiled for x86_64.
+(066485) [18:13:12] (native) install alpine-base
+(066485) [18:13:12] % sudo ln -s -f /var/cache/apk /home/jack/prog/pm/chroot_native/etc/apk/cache
+(066485) [18:13:12] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5243ef4b.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:12] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58e4f17d.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:12] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/build.postmarketos.org.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:12] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:12] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-524d27bb.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:12] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:12] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58199dcc.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:12] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58cbb476.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:12] % sudo cp /etc/resolv.conf /home/jack/prog/pm/chroot_native/etc/resolv.conf
+(066485) [18:13:12] % sudo mkdir -p /home/jack/prog/pm/chroot_native/etc/apk
+(066485) [18:13:12] (native) update /etc/apk/repositories
+(066485) [18:13:12] % sudo sh -c echo /mnt/pmbootstrap-packages >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(066485) [18:13:12] % sudo sh -c echo http://postmarketos1.brixit.nl/postmarketos/master >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(066485) [18:13:12] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/main >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(066485) [18:13:12] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(066485) [18:13:12] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /home/jack/prog/pm/chroot_native/etc/apk/repositories
+(066485) [18:13:12] % sudo /home/jack/prog/pm/apk.static --no-progress --root /home/jack/prog/pm/chroot_native --cache-dir /home/jack/prog/pm/cache_apk_x86_64 --initdb --arch x86_64 add alpine-base
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+(1/19) Installing musl (1.1.24-r6)
+(2/19) Installing busybox (1.31.1-r14)
+Executing busybox-1.31.1-r14.post-install
+(3/19) Installing alpine-baselayout (3.2.0-r5)
+Executing alpine-baselayout-3.2.0-r5.pre-install
+Executing alpine-baselayout-3.2.0-r5.post-install
+(4/19) Installing openrc (0.42.1-r8)
+Executing openrc-0.42.1-r8.post-install
+(5/19) Installing alpine-conf (3.8.3-r7)
+(6/19) Installing libcrypto1.1 (1.1.1g-r0)
+(7/19) Installing libssl1.1 (1.1.1g-r0)
+(8/19) Installing ca-certificates-bundle (20191127-r2)
+(9/19) Installing libtls-standalone (2.9.1-r1)
+(10/19) Installing ssl_client (1.31.1-r14)
+(11/19) Installing zlib (1.2.11-r3)
+(12/19) Installing apk-tools (2.10.5-r0)
+(13/19) Installing busybox-suid (1.31.1-r14)
+(14/19) Installing busybox-initscripts (3.2-r2)
+Executing busybox-initscripts-3.2-r2.post-install
+(15/19) Installing scanelf (1.2.5-r2)
+(16/19) Installing musl-utils (1.1.24-r6)
+(17/19) Installing libc-utils (0.7.2-r3)
+(18/19) Installing alpine-keys (2.2-r0)
+(19/19) Installing alpine-base (3.12_alpha20200319-r0)
+Executing busybox-1.31.1-r14.trigger
+OK: 8 MiB in 19 packages
+(066485) [18:13:12] (native) % adduser -D pmos -u 12345
+(066485) [18:13:12] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-abuild-config /home/pmos/.abuild
+(066485) [18:13:12] (native) % chown pmos:pmos /mnt/pmbootstrap-abuild-config
+(066485) [18:13:13] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-ccache /home/pmos/.ccache
+(066485) [18:13:13] (native) % chown pmos:pmos /mnt/pmbootstrap-ccache
+(066485) [18:13:13] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/packages
+(066485) [18:13:13] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-packages /home/pmos/packages/pmos
+(066485) [18:13:13] (native) % chown pmos:pmos /mnt/pmbootstrap-packages
+(066485) [18:13:13] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/.cargo/registry
+(066485) [18:13:13] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-rust/registry/index /home/pmos/.cargo/registry/index
+(066485) [18:13:13] (native) % chown pmos:pmos /mnt/pmbootstrap-rust/registry/index
+(066485) [18:13:13] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-rust/registry/cache /home/pmos/.cargo/registry/cache
+(066485) [18:13:13] (native) % chown pmos:pmos /mnt/pmbootstrap-rust/registry/cache
+(066485) [18:13:13] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/.cargo/git
+(066485) [18:13:13] (native) % busybox su pmos -c HOME=/home/pmos ln -s /mnt/pmbootstrap-rust/git/db /home/pmos/.cargo/git/db
+(066485) [18:13:13] (native) % chown pmos:pmos /mnt/pmbootstrap-rust/git/db
+(066485) [18:13:13] (native) calculate depends of cryptsetup, util-linux, e2fsprogs, parted, dosfstools (pmbootstrap -v for details)
+(066485) [18:13:14] (native) install cryptsetup util-linux e2fsprogs parted dosfstools
+(066485) [18:13:14] (native) % apk --no-progress add -u --virtual .pmbootstrap cryptsetup util-linux e2fsprogs parted dosfstools libblkid cryptsetup-libs popt libuuid findmnt libfdisk libmount ncurses-libs libsmartcols libcom_err e2fsprogs-libs device-mapper-libs readline argon2-libs json-c ncurses-terminfo-base
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+(1/23) Installing libblkid (2.35.1-r1)
+(2/23) Installing argon2-libs (20190702-r1)
+(3/23) Installing device-mapper-libs (2.02.186-r1)
+(4/23) Installing json-c (0.14-r0)
+(5/23) Installing libuuid (2.35.1-r1)
+(6/23) Installing cryptsetup-libs (2.3.1-r1)
+(7/23) Installing popt (1.16-r7)
+(8/23) Installing cryptsetup (2.3.1-r1)
+(9/23) Installing libmount (2.35.1-r1)
+(10/23) Installing libsmartcols (2.35.1-r1)
+(11/23) Installing findmnt (2.35.1-r1)
+(12/23) Installing libfdisk (2.35.1-r1)
+(13/23) Installing ncurses-terminfo-base (6.2_p20200425-r0)
+(14/23) Installing ncurses-libs (6.2_p20200425-r0)
+(15/23) Installing util-linux (2.35.1-r1)
+(16/23) Installing libcom_err (1.45.6-r0)
+(17/23) Installing e2fsprogs-libs (1.45.6-r0)
+(18/23) Installing e2fsprogs (1.45.6-r0)
+(19/23) Installing readline (8.0.4-r0)
+(20/23) Installing parted (3.3-r0)
+(21/23) Installing dosfstools (4.1-r1)
+(22/23) Installing .pmbootstrap (20200426.151314)
+(23/23) Installing cryptsetup-openrc (2.3.1-r1)
+Executing busybox-1.31.1-r14.trigger
+OK: 17 MiB in 42 packages
+(066485) [18:13:16] (native) % apk --no-progress add cryptsetup util-linux e2fsprogs parted dosfstools
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+OK: 17 MiB in 42 packages
+(066485) [18:13:17] (native) % apk --no-progress del .pmbootstrap
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+(1/1) Purging .pmbootstrap (20200426.151314)
+OK: 17 MiB in 41 packages
+(066485) [18:13:17] *** (2/5) CREATE DEVICE ROOTFS ("qemu-aarch64") ***
+(066485) [18:13:17] APKINDEX outdated (file does not exist yet): http://postmarketos1.brixit.nl/postmarketos/master/aarch64/APKINDEX.tar.gz
+(066485) [18:13:17] APKINDEX outdated (file does not exist yet): http://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/APKINDEX.tar.gz
+(066485) [18:13:17] APKINDEX outdated (file does not exist yet): http://dl-cdn.alpinelinux.org/alpine/edge/community/aarch64/APKINDEX.tar.gz
+(066485) [18:13:17] APKINDEX outdated (file does not exist yet): http://dl-cdn.alpinelinux.org/alpine/edge/testing/aarch64/APKINDEX.tar.gz
+(066485) [18:13:17] Update package index for aarch64 (4 file(s))
+(066485) [18:13:17] Download http://postmarketos1.brixit.nl/postmarketos/master/aarch64/APKINDEX.tar.gz
+(066485) [18:13:17] % sudo mkdir -p /home/jack/prog/pm/cache_apk_aarch64
+(066485) [18:13:17] % sudo cp /home/jack/prog/pm/cache_http/APKINDEX_ca8365a9ad9f4968eeb29d74c44b0e302df19a68af3099ab87067aefb86d5949 /home/jack/prog/pm/cache_apk_aarch64/APKINDEX.3f9c67ba.tar.gz
+(066485) [18:13:17] Download http://dl-cdn.alpinelinux.org/alpine/edge/main/aarch64/APKINDEX.tar.gz
+(066485) [18:13:18] % sudo cp /home/jack/prog/pm/cache_http/APKINDEX_40cefd388a6f179766303318562db37c94a7e2d75b4d33074c8beaeac080064f /home/jack/prog/pm/cache_apk_aarch64/APKINDEX.066df28d.tar.gz
+(066485) [18:13:18] Download http://dl-cdn.alpinelinux.org/alpine/edge/community/aarch64/APKINDEX.tar.gz
+(066485) [18:13:18] % sudo cp /home/jack/prog/pm/cache_http/APKINDEX_6e80a381677679c0e83714d2dc6c418e0e0c96a146d9b57fa03839d1b9f5bd40 /home/jack/prog/pm/cache_apk_aarch64/APKINDEX.b53994b4.tar.gz
+(066485) [18:13:18] Download http://dl-cdn.alpinelinux.org/alpine/edge/testing/aarch64/APKINDEX.tar.gz
+(066485) [18:13:19] % sudo cp /home/jack/prog/pm/cache_http/APKINDEX_d6ab3af2c088593f2c66b1286307b98f45cec060b38de2384f33bc9072659c06 /home/jack/prog/pm/cache_apk_aarch64/APKINDEX.30e6f5af.tar.gz
+(066485) [18:13:19] NOTE: Skipped apk version check for chroot 'rootfs_qemu-aarch64', because it is not installed yet!
+(066485) [18:13:19] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev
+(066485) [18:13:19] % sudo mount -t tmpfs -o size=1M,noexec,dev tmpfs /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev
+(066485) [18:13:19] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/pts /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/shm
+(066485) [18:13:19] % sudo mount -t tmpfs -o nodev,nosuid,noexec tmpfs /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/shm
+(066485) [18:13:19] % sudo mknod -m 666 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/null c 1 3
+(066485) [18:13:19] % sudo mknod -m 666 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/zero c 1 5
+(066485) [18:13:19] % sudo mknod -m 666 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/full c 1 7
+(066485) [18:13:19] % sudo mknod -m 644 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/random c 1 8
+(066485) [18:13:19] % sudo mknod -m 644 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/urandom c 1 9
+(066485) [18:13:19] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/proc
+(066485) [18:13:19] % sudo mount --bind /proc /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/proc
+(066485) [18:13:19] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/var/cache/apk
+(066485) [18:13:19] % sudo mount --bind /home/jack/prog/pm/cache_apk_aarch64 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/var/cache/apk
+(066485) [18:13:19] % sudo mkdir -p /home/jack/prog/pm/cache_ccache_aarch64
+(066485) [18:13:19] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-ccache
+(066485) [18:13:19] % sudo mount --bind /home/jack/prog/pm/cache_ccache_aarch64 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-ccache
+(066485) [18:13:19] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/var/cache/distfiles
+(066485) [18:13:20] % sudo mount --bind /home/jack/prog/pm/cache_distfiles /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/var/cache/distfiles
+(066485) [18:13:20] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-git
+(066485) [18:13:20] % sudo mount --bind /home/jack/prog/pm/cache_git /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-git
+(066485) [18:13:20] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-rust
+(066485) [18:13:20] % sudo mount --bind /home/jack/prog/pm/cache_rust /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-rust
+(066485) [18:13:20] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-abuild-config
+(066485) [18:13:20] % sudo mount --bind /home/jack/prog/pm/config_abuild /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-abuild-config
+(066485) [18:13:20] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/keys
+(066485) [18:13:20] % sudo mount --bind /home/jack/prog/pm/config_apk_keys /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/keys
+(066485) [18:13:20] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-packages
+(066485) [18:13:20] % sudo mount --bind /home/jack/prog/pm/packages /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-packages
+(066485) [18:13:20] (native) calculate depends of qemu-aarch64 (pmbootstrap -v for details)
+(066485) [18:13:20] (native) install qemu-aarch64
+(066485) [18:13:20] (native) % apk --no-progress add qemu-aarch64
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+(1/1) Installing qemu-aarch64 (4.2.0-r2)
+Executing busybox-1.31.1-r14.trigger
+OK: 21 MiB in 42 packages
+(066485) [18:13:21] Register qemu binfmt (aarch64)
+(066485) [18:13:21] % sudo sh -c echo ":qemu-aarch64:M::\x7f\x45\x4c\x46\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\xb7\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-aarch64-static:C" > /proc/sys/fs/binfmt_misc/register
+(066485) [18:13:21] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/usr/bin
+(066485) [18:13:21] % sudo touch /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/usr/bin/qemu-aarch64-static
+(066485) [18:13:21] % sudo mount --bind /home/jack/prog/pm/chroot_native/usr/bin/qemu-aarch64 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/usr/bin/qemu-aarch64-static
+(066485) [18:13:21] sigfilename: sbin/apk.static.SIGN.RSA.alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(066485) [18:13:21] sigkey: alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(066485) [18:13:21] extracted: /tmp/pmbootstrap4qk6ubutapk
+(066485) [18:13:21] extracted: /tmp/pmbootstraprzutlmmrsig
+(066485) [18:13:21] Verify apk.static signature with /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub
+(066485) [18:13:21] % openssl dgst -sha1 -verify /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub -signature /tmp/pmbootstraprzutlmmrsig /tmp/pmbootstrap4qk6ubutapk
+Verified OK
+(066485) [18:13:21] Verify the version reported by the apk.static binary (must match the package version 2.10.5-r0)
+(066485) [18:13:21] % /tmp/pmbootstrap4qk6ubutapk --version
+apk-tools 2.10.5, compiled for x86_64.
+(066485) [18:13:21] (rootfs_qemu-aarch64) install alpine-base
+(066485) [18:13:21] % sudo ln -s -f /var/cache/apk /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/cache
+(066485) [18:13:21] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5243ef4b.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:21] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58e4f17d.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:21] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/build.postmarketos.org.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:21] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:21] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-524d27bb.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:21] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:21] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58199dcc.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:21] % sudo cp /usr/lib/python3.8/site-packages/pmb/data/keys/alpine-devel@lists.alpinelinux.org-58cbb476.rsa.pub /home/jack/prog/pm/config_apk_keys/
+(066485) [18:13:21] % sudo cp /etc/resolv.conf /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/resolv.conf
+(066485) [18:13:21] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk
+(066485) [18:13:21] (rootfs_qemu-aarch64) update /etc/apk/repositories
+(066485) [18:13:21] % sudo sh -c echo /mnt/pmbootstrap-packages >> /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/repositories
+(066485) [18:13:21] % sudo sh -c echo http://postmarketos1.brixit.nl/postmarketos/master >> /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/repositories
+(066485) [18:13:21] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/main >> /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/repositories
+(066485) [18:13:21] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/repositories
+(066485) [18:13:21] % sudo sh -c echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/repositories
+(066485) [18:13:21] % sudo /home/jack/prog/pm/apk.static --no-progress --root /home/jack/prog/pm/chroot_rootfs_qemu-aarch64 --cache-dir /home/jack/prog/pm/cache_apk_aarch64 --initdb --arch aarch64 add alpine-base
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/19) Installing musl (1.1.24-r6)
+(2/19) Installing busybox (1.31.1-r14)
+Executing busybox-1.31.1-r14.post-install
+(3/19) Installing alpine-baselayout (3.2.0-r5)
+Executing alpine-baselayout-3.2.0-r5.pre-install
+Executing alpine-baselayout-3.2.0-r5.post-install
+(4/19) Installing openrc (0.42.1-r8)
+Executing openrc-0.42.1-r8.post-install
+(5/19) Installing alpine-conf (3.8.3-r7)
+(6/19) Installing libcrypto1.1 (1.1.1g-r0)
+(7/19) Installing libssl1.1 (1.1.1g-r0)
+(8/19) Installing ca-certificates-bundle (20191127-r2)
+(9/19) Installing libtls-standalone (2.9.1-r1)
+(10/19) Installing ssl_client (1.31.1-r14)
+(11/19) Installing zlib (1.2.11-r3)
+(12/19) Installing apk-tools (2.10.5-r0)
+(13/19) Installing busybox-suid (1.31.1-r14)
+(14/19) Installing busybox-initscripts (3.2-r2)
+Executing busybox-initscripts-3.2-r2.post-install
+(15/19) Installing scanelf (1.2.5-r2)
+(16/19) Installing musl-utils (1.1.24-r6)
+(17/19) Installing libc-utils (0.7.2-r3)
+(18/19) Installing alpine-keys (2.2-r0)
+(19/19) Installing alpine-base (3.12_alpha20200319-r0)
+Executing busybox-1.31.1-r14.trigger
+OK: 8 MiB in 19 packages
+(066485) [18:13:24] (rootfs_qemu-aarch64) calculate depends of  (pmbootstrap -v for details)
+(066485) [18:13:24] (rootfs_qemu-aarch64) % getent passwd jack
+(066485) [18:13:24] (rootfs_qemu-aarch64) % adduser -D -u 10000 jack
+(066485) [18:13:24] (rootfs_qemu-aarch64) % addgroup -S wheel
+addgroup: group 'wheel' in use
+(066485) [18:13:24] (rootfs_qemu-aarch64) % addgroup jack wheel
+(066485) [18:13:24] (rootfs_qemu-aarch64) % addgroup -S video
+addgroup: group 'video' in use
+(066485) [18:13:24] (rootfs_qemu-aarch64) % addgroup jack video
+(066485) [18:13:25] (rootfs_qemu-aarch64) % addgroup -S audio
+addgroup: group 'audio' in use
+(066485) [18:13:25] (rootfs_qemu-aarch64) % addgroup jack audio
+(066485) [18:13:25] (rootfs_qemu-aarch64) % addgroup -S input
+addgroup: group 'input' in use
+(066485) [18:13:25] (rootfs_qemu-aarch64) % addgroup jack input
+(066485) [18:13:25] (rootfs_qemu-aarch64) % addgroup -S plugdev
+(066485) [18:13:25] (rootfs_qemu-aarch64) % addgroup jack plugdev
+(066485) [18:13:25] (rootfs_qemu-aarch64) % addgroup -S netdev
+addgroup: group 'netdev' in use
+(066485) [18:13:25] (rootfs_qemu-aarch64) % addgroup jack netdev
+(066485) [18:13:26] (rootfs_qemu-aarch64) calculate depends of postmarketos-base, device-qemu-aarch64, device-qemu-aarch64-kernel-lts, postmarketos-ui-plasma-mobile, gnome-terminal, android-tools (pmbootstrap -v for details)
+(066485) [18:13:26] so:libdbus-1.so.3: has multiple providers (dbus-elogind-libs, dbus-libs), picked shortest: dbus-libs
+(066485) [18:13:26] so:libglapi.so.0: has multiple providers (mesa-git-glapi, mesa-glapi), picked shortest: mesa-glapi
+(066485) [18:13:27] so:libgbm.so.1: has multiple providers (mesa-git-gbm, mesa-gbm), picked shortest: mesa-gbm
+(066485) [18:13:27] so:libEGL.so.1: has multiple providers (mesa-git-egl, mesa-egl), picked shortest: mesa-egl
+(066485) [18:13:27] so:libGLESv2.so.2: has multiple providers (mesa-git-gles, mesa-gles), picked shortest: mesa-gles
+(066485) [18:13:27] (rootfs_qemu-aarch64) install postmarketos-base device-qemu-aarch64 device-qemu-aarch64-kernel-lts postmarketos-ui-plasma-mobile gnome-terminal android-tools
+(066485) [18:13:27] (rootfs_qemu-aarch64) % apk --no-progress add -u --virtual .pmbootstrap postmarketos-base device-qemu-aarch64 device-qemu-aarch64-kernel-lts postmarketos-ui-plasma-mobile gnome-terminal android-tools chrony cryptsetup eudev haveged openssh postmarketos-mkinitfs sudo util-linux wpa_supplicant shadow networkmanager mesa-dri-gallium linux-lts linux-firmware-none bluedevil breeze breeze-gtk elogind index kde-gtk-config kirigami-gallery kpeoplevcard kscreen kwallet-pam kwayland-integration ofono ofono-openrc pix plasma-angelfish plasma-dialer plasma-phonebook plasma-camera plasma-phone-components plasma-nm-mobile polkit-kde-agent-1 postmarketos-artwork-wallpapers powerdevil pulseaudio qt5-qtvirtualkeyboard qmlkonsole spacebar xdg-desktop-portal-kde urfkill urfkill-openrc lightdm lightdm-openrc xorg-server dbus desktop-file-utils gsettings-desktop-schemas ncurses-terminfo-base libx11 atk dconf gtk+3.0 glib libintl nautilus pango libuuid vte3 libgcc libstdc++ libusb libcap libblkid cryptsetup-libs popt udev-init-scripts eudev-libs kmod-libs openssh-client openssh-sftp-server openssh-server busybox-extras lddtree kmod multipath-tools device-mapper parted e2fsprogs e2fsprogs-extra osk-sdl charging-sdl triggerhappy xz bzip2 lz4 findmnt libfdisk libmount ncurses-libs libsmartcols dbus-libs libnl3 pcsc-lite-libs linux-pam dhcpcd iptables mobile-broadband-provider-info libcurl jansson libmm-glib libndp newt nspr nss polkit-elogind libpsl readline mesa llvm10-libs libdrm libelf expat mesa-glapi zstd-libs mkinitfs kded bluez bluez-qt kconfig kconfigwidgets kcoreaddons kdbusaddons ki18n kio knotifications kwidgetsaddons kwindowsystem qt5-qtbase qt5-qtbase-x11 qt5-qtdeclarative kguiaddons qt5-qtx11extras kdecoration libxcb gtk-engines libacl mauikit qmltermwidget kiconthemes gtk+2.0 kirigami2 kcontacts kpeople hicolor-icon-theme kdeclarative kglobalaccel plasma-framework libkscreen kxmlgui qt5-qtsensors libgcrypt kwayland kidletime ell qt5-qtquickcontrols2 purpose qt5-qtwebengine libphonenumber telepathy-qt qt5-qtmultimedia gst-plugins-bad gst-plugins-good plasma-nano plasma-workspace dbus-x11 kactivities plasma-pa plasma-nm libqofono breeze-icons plasma-settings telepathy-ofono telephony-service kservice gstreamer modemmanager-qt networkmanager-qt kcrash polkit-qt-1 upower kactivities-libs kauth kcompletion knotifyconfig solid-libs plasma-workspace-libs powerdevil-libs libice libsm libxtst libltdl orc libpulse speexdsp qt5-qtsvg libhunspell qt5-qtquickcontrols ktp-common-internals xdg-desktop-portal libepoxy mesa-gbm pipewire xinit accountsservice gnome-themes-extra adwaita-icon-theme libxdmcp libxklavier font-misc-misc font-cursor-misc xkeyboard-config xkbcomp mesa-gl libxau libxfont2 nettle libpciaccess pixman libxshmfence shared-mime-info gtk-update-icon-cache libxcomposite libxcursor libxdamage libxext libxfixes libxi libxinerama libxrandr at-spi2-atk cairo-gobject cairo cups-libs fontconfig freetype fribidi gdk-pixbuf harfbuzz wayland-libs-client wayland-libs-cursor wayland-libs-egl libxkbcommon libffi pcre tracker-miners gexiv2 gnome-autoar gnome-desktop gst-plugins-base libtracker libxft libxrender gnutls icu-libs pcre2 argon2-libs device-mapper-libs json-c xz-libs openssh-keygen libedit openssh-server-common libaio userspace-rcu lvm2-libs libcom_err e2fsprogs-libs directfb ttf-dejavu sdl2 sdl2_ttf libmnl libnftnl-libs ca-certificates nghttp2-libs slang sqlite-libs libelogind mozjs60 libidn2 libunistring libxml2 libbz2 fts consolekit2 kcodecs karchive kbookmarks kdoctools kitemviews kjobwidgets ktextwidgets kwallet libxslt qt5-qtspeech libcanberra xcb-util-keysyms libpcre2-16 mesa-egl mesa-gles libinput-libs libjpeg-turbo mtdev libpng xcb-util-wm xcb-util-image xcb-util-renderutil libxkbcommon-x11 gtk-engines-clearlooks gtk-engines-crux gtk-engines-industrial gtk-engines-mist gtk-engines-redmond gtk-engines-thinice kquicksyntaxhighlighter attica syntax-highlighting qt5-qtgraphicaleffects kirigami2-libs iso-codes kpackage libgpg-error wayland-libs-server qt5-qtwebchannel alsa-lib ffmpeg-libs libevent opus re2 snappy libvpx libwebp boost-thread libprotobuf telepathy-farstream telepathy-glib openexr soundtouch aom-libs libass chromaprint libdc1394 libde265 libdvdnav libdvdread faac faad2-libs fdk-aac flite fluidsynth gsm lcms2 libmms libmodplug neon libnice openal-soft openjpeg librsvg librtmp sbc libsndfile spandsp libsrtp libusrsctp libvdpau vo-aacenc vo-amrwbenc vulkan-loader x265-libs libzbar flac libavc1394 libcaca libdv libgudev libiec61883 jack lame mpg123-libs libraw1394 libshout libsoup speex taglib v4l-utils-libs wavpack tzdata kinit qt5-qttools kwin kactivitymanagerd milou plasma-integration qtchooser kquickcharts kactivities-stats baloo kholidays kitemmodels kdelibs4support knewstuff prison krunner ktexteditor kscreenlocker gpsd libksysguard phonon xcb-util qt5-qtbase-sqlite libpulse-mainloop-glib libqca telepathy-mission-control libofono-qt qt5-qtpim qt5-qtfeedback farstream polkit libasyncns soxr tdb-libs kcmutils kparts bubblewrap pkgconf fuse json-glib xauth mcookie xmodmap xrdb ttf-cantarell adwaita-gtk2-theme libbsd libxkbfile encodings font-alias mkfontscale util-macros libxxf86vm libfontenc gmp at-spi2-core avahi-libs tiff graphite2 tracker exempi-libs libexif giflib libgsf libgxps libiptcdata libosinfo poppler-glib libseccomp totem-pl-parser libvorbis exiv2 libarchive libxv cdparanoia-libs libogg libtheora p11-kit libtasn1 device-mapper-event-libs tslib docbook-xml docbook-xsl sonnet sound-theme-freedesktop libevdev libdav1d libssh libva x264-libs xvidcore dbus-glib libdvdcss imlib2 libsamplerate glib-networking qt5-qtwayland xorg-server-xwayland qt5-qtscript xcb-util-cursor font-noto ttf-hack qqc2-desktop-style kfilemetadata lmdb libdmtx-libs libqrencode threadweaver libsasl libgomp fuse-common libxmu hwids osinfo-db poppler lz4-libs libxml2-utils hunspell libid3tag libproxy db libxt hwids-net hwids-pci hwids-udev hwids-usb
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/547) Installing libcap (2.27-r0)
+(2/547) Installing chrony (3.5-r2)
+Executing chrony-3.5-r2.pre-install
+(3/547) Installing chrony-openrc (3.5-r2)
+(4/547) Installing libblkid (2.35.1-r1)
+(5/547) Installing argon2-libs (20190702-r1)
+(6/547) Installing device-mapper-libs (2.02.186-r1)
+(7/547) Installing json-c (0.14-r0)
+(8/547) Installing libuuid (2.35.1-r1)
+(9/547) Installing cryptsetup-libs (2.3.1-r1)
+(10/547) Installing popt (1.16-r7)
+(11/547) Installing cryptsetup (2.3.1-r1)
+(12/547) Installing cryptsetup-openrc (2.3.1-r1)
+(13/547) Installing udev-init-scripts (33-r1)
+Executing udev-init-scripts-33-r1.post-install
+(14/547) Installing udev-init-scripts-openrc (33-r1)
+(15/547) Installing eudev-libs (3.2.9-r3)
+(16/547) Installing xz-libs (5.2.5-r0)
+(17/547) Installing kmod-libs (27-r0)
+(18/547) Installing eudev (3.2.9-r3)
+(19/547) Installing eudev-openrc (3.2.9-r3)
+(20/547) Installing haveged (1.9.8-r1)
+(21/547) Installing haveged-openrc (1.9.8-r1)
+(22/547) Installing openssh-keygen (8.2_p1-r0)
+(23/547) Installing ncurses-terminfo-base (6.2_p20200425-r0)
+(24/547) Installing ncurses-libs (6.2_p20200425-r0)
+(25/547) Installing libedit (20191231.3.1-r0)
+(26/547) Installing openssh-client (8.2_p1-r0)
+(27/547) Installing openssh-sftp-server (8.2_p1-r0)
+(28/547) Installing openssh-server-common (8.2_p1-r0)
+(29/547) Installing openssh-server (8.2_p1-r0)
+(30/547) Installing openssh (8.2_p1-r0)
+(31/547) Installing busybox-extras (1.31.1-r14)
+Executing busybox-extras-1.31.1-r14.post-install
+(32/547) Installing lddtree (1.26-r2)
+(33/547) Installing kmod (27-r0)
+(34/547) Installing kmod-openrc (27-r0)
+(35/547) Installing libaio (0.3.112-r1)
+(36/547) Installing device-mapper-event-libs (2.02.186-r1)
+(37/547) Installing lvm2-libs (2.02.186-r1)
+(38/547) Installing device-mapper (2.02.186-r1)
+(39/547) Installing device-mapper-udev (2.02.186-r1)
+Executing device-mapper-udev-2.02.186-r1.post-install
+(40/547) Installing readline (8.0.4-r0)
+(41/547) Installing userspace-rcu (0.12.0-r0)
+(42/547) Installing multipath-tools (0.8.3-r5)
+(43/547) Installing multipath-tools-openrc (0.8.3-r5)
+(44/547) Installing parted (3.3-r0)
+(45/547) Installing libcom_err (1.45.6-r0)
+(46/547) Installing e2fsprogs-libs (1.45.6-r0)
+(47/547) Installing e2fsprogs (1.45.6-r0)
+(48/547) Installing e2fsprogs-extra (1.45.6-r0)
+(49/547) Installing mesa (20.0.5-r0)
+(50/547) Installing libxau (1.0.9-r0)
+(51/547) Installing libbsd (0.10.0-r0)
+(52/547) Installing libxdmcp (1.1.3-r0)
+(53/547) Installing libxcb (1.14-r0)
+(54/547) Installing libx11 (1.6.9-r0)
+(55/547) Installing libxdamage (1.1.5-r0)
+(56/547) Installing libxext (1.3.4-r0)
+(57/547) Installing libxfixes (5.0.3-r2)
+(58/547) Installing libxxf86vm (1.1.4-r2)
+(59/547) Installing libdrm (2.4.101-r0)
+(60/547) Installing expat (2.2.9-r1)
+(61/547) Installing mesa-glapi (20.0.5-r0)
+(62/547) Installing libxshmfence (1.3-r0)
+(63/547) Installing mesa-gl (20.0.5-r0)
+(64/547) Installing libbz2 (1.0.8-r1)
+(65/547) Installing libpng (1.6.37-r1)
+(66/547) Installing freetype (2.10.1-r0)
+(67/547) Installing libgcc (9.3.0-r1)
+(68/547) Installing libstdc++ (9.3.0-r1)
+(69/547) Installing tslib (1.21-r0)
+(70/547) Installing directfb (1.7.7-r2)
+(71/547) Installing fontconfig (2.13.1-r2)
+(72/547) Installing encodings (1.0.5-r0)
+(73/547) Installing libfontenc (1.1.4-r0)
+(74/547) Installing mkfontscale (1.2.1-r1)
+(75/547) Installing ttf-dejavu (2.37-r1)
+(76/547) Installing sdl2 (2.0.12-r0)
+(77/547) Installing sdl2_ttf (2.0.15-r0)
+(78/547) Installing osk-sdl (0.54-r0)
+(79/547) Installing charging-sdl (0.1-r1)
+(80/547) Installing triggerhappy (0.5.0-r0)
+(81/547) Installing xz (5.2.5-r0)
+(82/547) Installing bzip2 (1.0.8-r1)
+(83/547) Installing lz4 (1.9.2-r0)
+(84/547) Installing postmarketos-mkinitfs (0.12.1-r0)
+(85/547) Installing sudo (1.8.31p1-r0)
+(86/547) Installing libmount (2.35.1-r1)
+(87/547) Installing libsmartcols (2.35.1-r1)
+(88/547) Installing findmnt (2.35.1-r1)
+(89/547) Installing libfdisk (2.35.1-r1)
+(90/547) Installing util-linux (2.35.1-r1)
+(91/547) Installing dbus-libs (1.12.16-r4)
+(92/547) Installing libnl3 (3.5.0-r0)
+(93/547) Installing pcsc-lite-libs (1.8.26-r0)
+(94/547) Installing wpa_supplicant (2.9-r5)
+(95/547) Installing wpa_supplicant-openrc (2.9-r5)
+(96/547) Installing linux-pam (1.3.1-r3)
+(97/547) Installing shadow (4.8.1-r0)
+(98/547) Installing dhcpcd (9999-r2)
+(99/547) Installing dhcpcd-openrc (9999-r2)
+(100/547) Installing libmnl (1.0.4-r0)
+(101/547) Installing libnftnl-libs (1.1.6-r0)
+(102/547) Installing iptables (1.8.4-r1)
+(103/547) Installing iptables-openrc (1.8.4-r1)
+(104/547) Installing dbus (1.12.16-r4)
+Executing dbus-1.12.16-r4.pre-install
+Executing dbus-1.12.16-r4.post-install
+(105/547) Installing dbus-openrc (1.12.16-r4)
+(106/547) Installing mobile-broadband-provider-info (20190618-r0)
+(107/547) Installing ca-certificates (20191127-r2)
+(108/547) Installing nghttp2-libs (1.40.0-r0)
+(109/547) Installing libcurl (7.69.1-r0)
+(110/547) Installing libffi (3.3-r1)
+(111/547) Installing libintl (0.20.2-r0)
+(112/547) Installing pcre (8.44-r0)
+(113/547) Installing glib (2.64.2-r3)
+(114/547) Installing jansson (2.12-r0)
+(115/547) Installing libmm-glib (1.12.8-r0)
+(116/547) Installing libndp (1.7-r0)
+(117/547) Installing slang (2.3.2-r0)
+(118/547) Installing newt (0.52.21-r0)
+(119/547) Installing nspr (4.25-r0)
+(120/547) Installing sqlite-libs (3.31.1-r2)
+(121/547) Installing nss (3.51.1-r0)
+(122/547) Installing libelogind (243.4-r4)
+(123/547) Installing icu-libs (67.1-r0)
+(124/547) Installing mozjs60 (60.9.0-r7)
+(125/547) Installing polkit-elogind (0.116-r2)
+Executing polkit-elogind-0.116-r2.pre-install
+(126/547) Installing polkit-elogind-openrc (0.116-r2)
+(127/547) Installing libunistring (0.9.10-r0)
+(128/547) Installing libidn2 (2.3.0-r0)
+(129/547) Installing libpsl (0.21.0-r1)
+(130/547) Installing networkmanager (1.22.10-r0)
+Executing networkmanager-1.22.10-r0.pre-install
+  *
+  * To setup system connections, regular users must be member of 'plugdev' group.
+  *
+  *
+  * To control WiFi devices, enable wpa_supplicant service: 'rc-update add wpa_supplicant default'
+  * then reboot the system or restart 'wpa_supplicant' and 'networkmanager' services respectively.
+  *
+(131/547) Installing networkmanager-openrc (1.22.10-r0)
+(132/547) Installing postmarketos-base (3-r33)
+Executing postmarketos-base-3-r33.post-install
+- Modifying: /etc/fstab
+- Modifying: /etc/issue
+- Modifying: /etc/motd
+- Modifying: /etc/conf.d/syslog
+- Modifying: /etc/conf.d/wpa_supplicant
+- Modifying: /etc/sudoers
+- Modifying: /etc/chrony/chrony.conf (adding makestep)
+- Modifying: /etc/chrony/chrony.conf (removing initstepslew)
+(133/547) Installing libxml2 (2.9.10-r3)
+(134/547) Installing llvm10-libs (10.0.0-r2)
+(135/547) Installing fts (1.2.7-r1)
+(136/547) Installing libelf (0.179-r0)
+(137/547) Installing zstd-libs (1.4.4-r1)
+(138/547) Installing mesa-dri-gallium (20.0.5-r0)
+(139/547) Installing device-qemu-aarch64 (2-r0)
+(140/547) Installing linux-firmware-none (20200421-r1)
+(141/547) Installing linux-lts (5.4.35-r0)
+(142/547) Installing device-qemu-aarch64-kernel-lts (2-r0)
+(143/547) Installing libpcre2-16 (10.34-r1)
+(144/547) Installing qt5-qtbase (9999-r1)
+(145/547) Installing hicolor-icon-theme (0.17-r1)
+(146/547) Installing wayland-libs-server (1.18.0-r4)
+(147/547) Installing mesa-gbm (20.0.5-r0)
+(148/547) Installing wayland-libs-client (1.18.0-r4)
+(149/547) Installing mesa-egl (20.0.5-r0)
+(150/547) Installing mesa-gles (20.0.5-r0)
+(151/547) Installing libice (1.0.10-r0)
+(152/547) Installing libsm (1.2.3-r0)
+(153/547) Installing avahi-libs (0.8-r0)
+(154/547) Installing gmp (6.2.0-r0)
+(155/547) Installing nettle (3.5.1-r1)
+(156/547) Installing p11-kit (0.23.20-r5)
+(157/547) Installing libtasn1 (4.16.0-r1)
+(158/547) Installing gnutls (3.6.13-r0)
+(159/547) Installing cups-libs (2.2.12-r2)
+(160/547) Installing graphite2 (1.3.14-r0)
+(161/547) Installing harfbuzz (2.6.5-r1)
+(162/547) Installing libevdev (1.9.0-r0)
+(163/547) Installing mtdev (1.1.6-r0)
+(164/547) Installing libinput-libs (1.15.5-r0)
+(165/547) Installing libjpeg-turbo (2.0.4-r1)
+(166/547) Installing xcb-util-wm (0.4.1-r1)
+(167/547) Installing xcb-util (0.4.0-r3)
+(168/547) Installing xcb-util-image (0.4.0-r1)
+(169/547) Installing xcb-util-keysyms (0.4.0-r1)
+(170/547) Installing xcb-util-renderutil (0.3.9-r1)
+(171/547) Installing libxkbcommon (0.10.0-r1)
+(172/547) Installing libxkbcommon-x11 (0.10.0-r1)
+(173/547) Installing qt5-qtbase-x11 (9999-r1)
+(174/547) Installing kconfig (5.69.0-r0)
+(175/547) Installing kcoreaddons (5.69.0-r0)
+(176/547) Installing qt5-qtx11extras (5.14.1-r1)
+(177/547) Installing kwindowsystem (5.69.0-r0)
+(178/547) Installing kcrash (5.69.0-r0)
+(179/547) Installing kdbusaddons (5.69.0-r0)
+(180/547) Installing qt5-qtdeclarative (9999-r0)
+(181/547) Installing ki18n (5.69.0-r0)
+(182/547) Installing kservice (5.69.0-r0)
+(183/547) Installing kded (5.69.0-r0)
+(184/547) Installing consolekit2 (1.2.1-r1)
+(185/547) Installing bluez (5.54-r3)
+(186/547) Installing bluez-qt (5.69.0-r0)
+(187/547) Installing polkit-qt-1 (0.113.0-r1)
+(188/547) Installing kauth (5.69.0-r0)
+(189/547) Installing kcodecs (5.69.0-r0)
+(190/547) Installing kguiaddons (5.69.0-r0)
+(191/547) Installing kwidgetsaddons (5.69.0-r0)
+(192/547) Installing kconfigwidgets (5.69.0-r0)
+(193/547) Installing karchive (5.69.0-r0)
+(194/547) Installing attica (5.69.0-r0)
+(195/547) Installing kglobalaccel (5.69.0-r0)
+(196/547) Installing kitemviews (5.69.0-r0)
+(197/547) Installing qt5-qtsvg (5.14.1-r1)
+(198/547) Installing kiconthemes (5.69.0-r0)
+(199/547) Installing kxmlgui (5.69.0-r0)
+(200/547) Installing kbookmarks (5.69.0-r0)
+(201/547) Installing kcompletion (5.69.0-r0)
+(202/547) Installing libxml2-utils (2.9.10-r3)
+(203/547) Installing docbook-xml (4.5-r6)
+Executing docbook-xml-4.5-r6.post-install
+(204/547) Installing libgpg-error (1.37-r0)
+(205/547) Installing libgcrypt (1.8.5-r0)
+(206/547) Installing libxslt (1.1.34-r0)
+(207/547) Installing docbook-xsl (1.79.2-r2)
+Executing docbook-xsl-1.79.2-r2.post-install
+(208/547) Installing kdoctools (5.69.0-r0)
+(209/547) Installing kjobwidgets (5.69.0-r0)
+(210/547) Installing alsa-lib (1.2.2-r0)
+(211/547) Installing libxv (1.0.11-r2)
+(212/547) Installing libxrender (0.9.10-r3)
+(213/547) Installing pixman (0.40.0-r1)
+(214/547) Installing cairo (1.16.0-r2)
+(215/547) Installing cdparanoia-libs (10.2-r8)
+(216/547) Installing gstreamer (1.16.2-r2)
+(217/547) Installing libogg (1.3.4-r0)
+(218/547) Installing opus (1.3.1-r0)
+(219/547) Installing orc (0.4.31-r2)
+(220/547) Installing libxft (2.3.3-r0)
+(221/547) Installing fribidi (1.0.9-r0)
+(222/547) Installing pango (1.44.7-r2)
+(223/547) Installing libtheora (1.1.1-r14)
+(224/547) Installing libvorbis (1.3.6-r2)
+(225/547) Installing wayland-libs-egl (1.18.0-r4)
+(226/547) Installing gst-plugins-base (1.16.2-r3)
+(227/547) Installing qt5-qtmultimedia (5.14.1-r1)
+(228/547) Installing qt5-qtspeech (5.14.1-r1)
+(229/547) Installing libxtst (1.2.3-r3)
+(230/547) Installing sound-theme-freedesktop (0.8-r0)
+(231/547) Installing libltdl (2.4.6-r7)
+(232/547) Installing libcanberra (0.30-r5)
+(233/547) Installing libcanberra-gstreamer (0.30-r5)
+(234/547) Installing knotifications (5.69.0-r0)
+(235/547) Installing solid-libs (5.69.0-r0)
+(236/547) Installing libhunspell (1.7.0-r1)
+(237/547) Installing hunspell (1.7.0-r1)
+(238/547) Installing sonnet (5.69.0-r0)
+(239/547) Installing ktextwidgets (5.69.0-r0)
+(240/547) Installing kwallet (5.69.0-r0)
+(241/547) Installing kio (5.69.0-r0)
+(242/547) Installing bluedevil (5.18.4-r0)
+(243/547) Installing kdecoration (5.18.4-r0)
+(244/547) Installing breeze (5.18.4-r0)
+(245/547) Installing pkgconf (1.6.3-r2)
+(246/547) Installing shared-mime-info (1.15-r0)
+(247/547) Installing tiff (4.1.0-r0)
+(248/547) Installing gdk-pixbuf (2.40.0-r2)
+(249/547) Installing gtk-update-icon-cache (2.24.32-r1)
+(250/547) Installing libxcomposite (0.4.5-r0)
+(251/547) Installing libxcursor (1.2.0-r0)
+(252/547) Installing libxi (1.7.10-r0)
+(253/547) Installing libxrandr (1.5.2-r0)
+(254/547) Installing atk (2.36.0-r0)
+(255/547) Installing gtk+2.0 (2.24.32-r1)
+Executing gtk+2.0-2.24.32-r1.post-install
+(256/547) Installing gtk-engines-clearlooks (2.21.0-r3)
+(257/547) Installing gtk-engines-crux (2.21.0-r3)
+(258/547) Installing gtk-engines-industrial (2.21.0-r3)
+(259/547) Installing gtk-engines-mist (2.21.0-r3)
+(260/547) Installing gtk-engines-redmond (2.21.0-r3)
+(261/547) Installing gtk-engines-thinice (2.21.0-r3)
+(262/547) Installing gtk-engines (2.21.0-r3)
+(263/547) Installing breeze-gtk (5.18.4-r0)
+(264/547) Installing libacl (2.2.53-r0)
+(265/547) Installing elogind (243.4-r4)
+(266/547) Installing elogind-openrc (243.4-r4)
+(267/547) Installing syntax-highlighting (5.69.0-r0)
+(268/547) Installing kquicksyntaxhighlighter (0_git20181209-r1)
+(269/547) Installing qt5-qtgraphicaleffects (5.14.1-r1)
+(270/547) Installing qt5-qtquickcontrols2 (5.14.1-r1)
+(271/547) Installing kirigami2-libs (5.69.0-r0)
+(272/547) Installing kirigami2 (5.69.0-r0)
+(273/547) Installing mauikit (0_git20191002-r2)
+(274/547) Installing qmltermwidget (0.2.0-r1)
+(275/547) Installing index (0_git20191001-r0)
+(276/547) Installing gsettings-desktop-schemas (3.36.0-r0)
+(277/547) Installing libxinerama (1.1.4-r1)
+(278/547) Installing at-spi2-core (2.36.0-r1)
+(279/547) Installing at-spi2-atk (2.34.2-r1)
+(280/547) Installing cairo-gobject (1.16.0-r2)
+(281/547) Installing libepoxy (1.5.4-r0)
+(282/547) Installing wayland-libs-cursor (1.18.0-r4)
+(283/547) Installing gtk+3.0 (3.24.18-r0)
+Executing gtk+3.0-3.24.18-r0.post-install
+(284/547) Installing kde-gtk-config (5.18.4-r0)
+(285/547) Installing kirigami-gallery (19.12.3-r0)
+(286/547) Installing iso-codes (4.4-r0)
+(287/547) Installing kcontacts (5.69.0-r0)
+(288/547) Installing kpeople (5.69.0-r0)
+(289/547) Installing kpeoplevcard (0.1-r2)
+(290/547) Installing kpackage (5.69.0-r0)
+(291/547) Installing kdeclarative (5.69.0-r0)
+(292/547) Installing kactivities-libs (5.69.0-r0)
+(293/547) Installing kwayland (5.69.0-r0)
+(294/547) Installing plasma-framework (5.69.0-r0)
+(295/547) Installing libkscreen (5.18.4-r0)
+(296/547) Installing qt5-qtsensors (5.14.1-r1)
+(297/547) Installing kscreen (5.18.4-r0)
+(298/547) Installing kwallet-pam (5.18.4-r0)
+(299/547) Installing kidletime (5.69.0-r0)
+(300/547) Installing kwayland-integration (5.18.4-r0)
+(301/547) Installing ell (0.31-r0)
+(302/547) Installing ofono (9999-r5)
+(303/547) Installing ofono-openrc (9999-r5)
+(304/547) Installing pix (0_git20190620-r1)
+(305/547) Installing purpose (5.69.0-r0)
+(306/547) Installing qt5-qtwebchannel (5.14.1-r1)
+(307/547) Installing aom-libs (1.0.0-r0)
+(308/547) Installing libass (0.14.0-r0)
+(309/547) Installing libdav1d (0.6.0-r1)
+(310/547) Installing lame (3.100-r0)
+(311/547) Installing libssh (0.9.4-r0)
+(312/547) Installing v4l-utils-libs (1.18.0-r0)
+(313/547) Installing libva (2.7.1-r0)
+(314/547) Installing libvdpau (1.4-r0)
+(315/547) Installing libvpx (1.8.2-r0)
+(316/547) Installing x264-libs (20191119-r1)
+(317/547) Installing x265-libs (3.3-r1)
+(318/547) Installing xvidcore (1.3.7-r1)
+(319/547) Installing ffmpeg-libs (4.2.2-r2)
+(320/547) Installing libevent (2.1.11-r0)
+(321/547) Installing re2 (2020.01.01-r0)
+(322/547) Installing snappy (1.1.8-r2)
+(323/547) Installing libwebp (1.1.0-r0)
+(324/547) Installing qt5-qtwebengine (5.14.1-r3)
+(325/547) Installing plasma-angelfish (1.5.1-r0)
+(326/547) Installing boost-thread (1.72.0-r6)
+(327/547) Installing libprotobuf (3.11.4-r2)
+(328/547) Installing libphonenumber (8.12.1-r1)
+(329/547) Installing dbus-glib (0.110-r0)
+(330/547) Installing libnice (0.1.16-r1)
+(331/547) Installing farstream (0.2.9-r0)
+(332/547) Installing telepathy-glib (0.24.1-r1)
+(333/547) Installing telepathy-farstream (0.6.2_git20190919-r0)
+(334/547) Installing telepathy-qt (0.9.8-r2)
+(335/547) Installing plasma-dialer (0_git20200320-r1)
+(336/547) Installing plasma-phonebook (0_git20200308-r0)
+(337/547) Installing openexr (2.4.1-r2)
+(338/547) Installing soundtouch (2.1.2-r0)
+(339/547) Installing chromaprint (1.5.0-r0)
+(340/547) Installing libraw1394 (2.1.2-r2)
+(341/547) Installing libusb (1.0.23-r0)
+(342/547) Installing libdc1394 (2.2.6-r0)
+(343/547) Installing libde265 (1.0.4-r0)
+(344/547) Installing libdvdcss (1.4.2-r0)
+(345/547) Installing libdvdread (6.1.1-r0)
+(346/547) Installing libdvdnav (6.1.0-r1)
+(347/547) Installing faac (1.30-r0)
+(348/547) Installing faad2-libs (2.9.1-r0)
+(349/547) Installing fdk-aac (2.0.1-r0)
+(350/547) Installing flite (2.1-r1)
+(351/547) Installing libasyncns (0.8-r1)
+(352/547) Installing flac (1.3.3-r0)
+(353/547) Installing libsndfile (1.0.28-r8)
+(354/547) Installing libgomp (9.3.0-r1)
+(355/547) Installing soxr (0.1.3-r2)
+(356/547) Installing speexdsp (1.2.0-r0)
+(357/547) Installing tdb-libs (1.4.3-r0)
+(358/547) Installing libpulse (13.0-r8)
+(359/547) Installing fluidsynth (2.1.2-r0)
+(360/547) Installing gsm (1.0.19-r0)
+(361/547) Installing lcms2 (2.9-r1)
+(362/547) Installing libmms (0.6.4-r1)
+(363/547) Installing libmodplug (0.8.9.0-r0)
+(364/547) Installing neon (0.30.2-r7)
+(365/547) Installing openal-soft (1.20.1-r1)
+(366/547) Installing openjpeg (2.3.1-r4)
+(367/547) Installing librsvg (2.48.4-r0)
+(368/547) Installing librtmp (2.4_git20190330-r0)
+(369/547) Installing sbc (1.4-r0)
+(370/547) Installing spandsp (0.0.6-r1)
+(371/547) Installing libsrtp (2.3.0-r0)
+(372/547) Installing libusrsctp (0.9.3.0_git20190127-r0)
+(373/547) Installing vo-aacenc (0.1.3-r0)
+(374/547) Installing vo-amrwbenc (0.1.3-r0)
+(375/547) Installing vulkan-loader (1.2.135-r0)
+(376/547) Installing libzbar (0.23-r2)
+(377/547) Installing gst-plugins-bad (1.16.2-r8)
+(378/547) Installing libavc1394 (0.5.4-r2)
+(379/547) Installing giflib (5.2.1-r0)
+(380/547) Installing libid3tag (0.15.1b-r7)
+(381/547) Installing imlib2 (1.6.1-r0)
+(382/547) Installing libcaca (0.99_beta19-r3)
+(383/547) Installing libdv (1.0.0-r3)
+(384/547) Installing libgudev (233-r1)
+(385/547) Installing libiec61883 (1.2.0-r2)
+(386/547) Installing libsamplerate (0.1.9-r1)
+(387/547) Installing jack (1.9.14-r0)
+(388/547) Installing mpg123-libs (1.25.13-r0)
+(389/547) Installing speex (1.2.0-r0)
+(390/547) Installing libshout (2.4.3-r1)
+(391/547) Installing libproxy (0.4.15-r6)
+(392/547) Installing glib-networking (2.64.2-r0)
+(393/547) Installing libsoup (2.70.0-r0)
+(394/547) Installing taglib (1.11.1-r3)
+(395/547) Installing wavpack (5.3.0-r0)
+(396/547) Installing gst-plugins-good (1.16.2-r5)
+(397/547) Installing plasma-camera (0_git20200305-r0)
+(398/547) Installing plasma-nano (5.18.80_git20200215-r0)
+(399/547) Installing tzdata (2019c-r0)
+(400/547) Installing qt5-qtquickcontrols (5.14.1-r1)
+(401/547) Installing kinit (5.69.0-r0)
+(402/547) Installing qt5-qttools (5.14.1-r1)
+(403/547) Installing qt5-qtwayland (5.14.1-r1)
+(404/547) Installing font-alias (1.0.3-r1)
+(405/547) Installing util-macros (1.19.2-r1)
+(406/547) Installing font-misc-misc (1.1.2-r1)
+(407/547) Installing font-cursor-misc (1.0.3-r1)
+(408/547) Installing xkeyboard-config (9999-r2)
+(409/547) Installing libxkbfile (1.1.0-r0)
+(410/547) Installing xkbcomp (1.4.3-r0)
+(411/547) Installing libxt (1.2.0-r0)
+(412/547) Installing libxmu (1.1.3-r0)
+(413/547) Installing xauth (1.1-r0)
+(414/547) Installing mcookie (2.35.1-r1)
+(415/547) Installing xmodmap (1.0.10-r0)
+(416/547) Installing xrdb (1.2.0-r1)
+(417/547) Installing xinit (1.4.1-r0)
+(418/547) Installing libxfont2 (2.0.4-r0)
+(419/547) Installing xorg-server-xwayland (1.20.8-r1)
+(420/547) Installing kcmutils (5.69.0-r0)
+(421/547) Installing knewstuff (5.69.0-r0)
+(422/547) Installing libseccomp (2.4.3-r0)
+(423/547) Installing kscreenlocker (5.18.4-r0)
+(424/547) Installing qt5-qtscript (5.14.1-r1)
+(425/547) Installing xcb-util-cursor (0.1.3-r2)
+(426/547) Installing kwin (5.18.80-r1)
+(427/547) Installing qt5-qtbase-sqlite (9999-r1)
+(428/547) Installing kactivitymanagerd (5.18.4-r0)
+(429/547) Installing kitemmodels (5.69.0-r0)
+(430/547) Installing threadweaver (5.69.0-r0)
+(431/547) Installing krunner (5.69.0-r0)
+(432/547) Installing milou (5.18.4-r0)
+(433/547) Installing font-noto (0_git20190623-r0)
+(434/547) Installing ttf-hack (3.003-r1)
+(435/547) Installing qqc2-desktop-style (5.69.0-r0)
+(436/547) Installing plasma-integration (5.18.4-r0)
+(437/547) Installing qtchooser (66-r0)
+(438/547) Installing kquickcharts (5.69.0-r0)
+(439/547) Installing plasma-workspace-libs (5.18.80-r2)
+(440/547) Installing kactivities-stats (5.69.0-r0)
+(441/547) Installing exiv2 (0.27.2-r6)
+(442/547) Installing kfilemetadata (5.69.0-r0)
+(443/547) Installing lmdb (0.9.24-r1)
+(444/547) Installing baloo (5.69.0-r0)
+(445/547) Installing kholidays (5.69.0-r0)
+(446/547) Installing kparts (5.69.0-r0)
+(447/547) Installing kdelibs4support (5.69.0-r0)
+(448/547) Installing networkmanager-qt (5.69.0-r0)
+(449/547) Installing knotifyconfig (5.69.0-r0)
+(450/547) Installing libdmtx-libs (0.7.5-r1)
+(451/547) Installing libqrencode (4.0.2-r0)
+(452/547) Installing prison (5.69.0-r0)
+(453/547) Installing ktexteditor (5.69.0-r0)
+(454/547) Installing gpsd (3.20-r1)
+(455/547) Installing libksysguard (5.18.4-r0)
+(456/547) Installing phonon (4.11.1-r2)
+(457/547) Installing plasma-workspace (5.18.80-r2)
+(458/547) Installing dbus-x11 (1.12.16-r4)
+(459/547) Installing kactivities (5.69.0-r0)
+(460/547) Installing pulseaudio (13.0-r8)
+Executing pulseaudio-13.0-r8.post-install
+(461/547) Installing pulseaudio-alsa (13.0-r8)
+(462/547) Installing pulseaudio-openrc (13.0-r8)
+(463/547) Installing libcanberra-pulse (0.30-r5)
+(464/547) Installing alsa-plugins-pulse (1.2.2-r1)
+(465/547) Installing libpulse-mainloop-glib (13.0-r8)
+(466/547) Installing plasma-pa (5.18.4-r0)
+(467/547) Installing modemmanager-qt (5.69.0-r0)
+(468/547) Installing db (5.3.28-r1)
+(469/547) Installing libsasl (2.1.27-r6)
+(470/547) Installing libqca (2.3.0-r1)
+(471/547) Installing plasma-nm (5.18.4-r0)
+(472/547) Installing libqofono (0.99-r0)
+(473/547) Installing breeze-icons (5.69.0-r0)
+(474/547) Installing plasma-settings (0_git20191204-r0)
+(475/547) Installing telepathy-mission-control (5.16.5-r1)
+(476/547) Installing libofono-qt (0.54_git20190116-r2)
+(477/547) Installing telepathy-ofono (0_git20190805-r2)
+(478/547) Installing qt5-qtpim (0_git20190227-r1)
+(479/547) Installing qt5-qtfeedback (0_git20180903-r1)
+(480/547) Installing telephony-service (0_git20200218-r1)
+(481/547) Installing plasma-phone-components (5.18.80_git20200328-r1)
+(482/547) Installing plasma-nm-mobile (5.18.4-r0)
+(483/547) Installing polkit-kde-agent-1 (5.18.4-r0)
+(484/547) Installing postmarketos-artwork-wallpapers (2-r0)
+(485/547) Installing upower (0.99.11-r0)
+(486/547) Installing powerdevil-libs (5.18.4-r0)
+(487/547) Installing powerdevil (5.18.4-r0)
+(488/547) Installing qt5-qtvirtualkeyboard (5.14.1-r1)
+(489/547) Installing qmlkonsole (0_git20200128-r1)
+(490/547) Installing ktp-common-internals (9999_git20200217-r0)
+(491/547) Installing spacebar (0_git20200317-r0)
+(492/547) Installing bubblewrap (0.4.1-r0)
+(493/547) Installing fuse-common (3.9.1-r0)
+(494/547) Installing fuse-openrc (3.9.1-r0)
+(495/547) Installing fuse (2.9.9-r0)
+(496/547) Installing json-glib (1.4.4-r2)
+(497/547) Installing pipewire (0.3.2-r0)
+(498/547) Installing xdg-desktop-portal (1.6.0-r2)
+(499/547) Installing xdg-desktop-portal-kde (5.18.4-r1)
+(500/547) Installing urfkill (0.5.0_git20170118-r1)
+(501/547) Installing urfkill-openrc (0.5.0_git20170118-r1)
+(502/547) Installing accountsservice (0.6.55-r1)
+(503/547) Installing ttf-cantarell (0.201-r1)
+(504/547) Installing adwaita-gtk2-theme (3.28-r1)
+(505/547) Installing gnome-themes-extra (3.28-r1)
+(506/547) Installing adwaita-icon-theme (3.36.1-r0)
+(507/547) Installing libxklavier (5.4-r5)
+(508/547) Installing lightdm (1.30.0-r2)
+Executing lightdm-1.30.0-r2.pre-install
+(509/547) Installing lightdm-openrc (1.30.0-r2)
+(510/547) Installing libpciaccess (0.16-r0)
+(511/547) Installing xorg-server (1.20.8-r1)
+(512/547) Installing libinput (1.15.5-r0)
+(513/547) Installing xf86-input-libinput (0.29.0-r0)
+(514/547) Installing xf86-video-fbdev (0.5.0-r2)
+(515/547) Installing postmarketos-base-x11 (3-r33)
+(516/547) Installing postmarketos-ui-plasma-mobile (2-r20)
+Executing postmarketos-ui-plasma-mobile-2-r20.post-install
+ * service lightdm added to runlevel default
+ * service urfkill added to runlevel default
+ * service ofono added to runlevel default
+ * service ofono-auto-enable added to runlevel default
+(517/547) Installing desktop-file-utils (0.24-r0)
+(518/547) Installing dconf (0.36.0-r0)
+(519/547) Installing libtracker (2.3.4-r2)
+(520/547) Installing tracker (2.3.4-r2)
+(521/547) Installing exempi-libs (2.5.1-r1)
+(522/547) Installing libexif (0.6.21-r3)
+(523/547) Installing gexiv2 (0.12.0-r4)
+(524/547) Installing libgsf (1.14.47-r0)
+(525/547) Installing lz4-libs (1.9.2-r0)
+(526/547) Installing libarchive (3.4.2-r0)
+(527/547) Installing libgxps (0.3.1-r2)
+(528/547) Installing libiptcdata (1.0.5-r0)
+(529/547) Installing hwids-net (20200306-r0)
+(530/547) Installing hwids-pci (20200306-r0)
+(531/547) Installing hwids-usb (20200306-r0)
+(532/547) Installing hwids-udev (20200306-r0)
+(533/547) Installing hwids (20200306-r0)
+(534/547) Installing osinfo-db (20200325-r0)
+(535/547) Installing libosinfo (1.7.1-r1)
+(536/547) Installing poppler (0.87.0-r0)
+(537/547) Installing poppler-glib (0.87.0-r0)
+(538/547) Installing totem-pl-parser (3.26.5-r1)
+(539/547) Installing tracker-miners (2.3.3-r2)
+(540/547) Installing gnome-autoar (0.2.3-r0)
+(541/547) Installing gnome-desktop (3.36.1-r1)
+(542/547) Installing nautilus (3.36.1.1-r0)
+(543/547) Installing pcre2 (10.34-r1)
+(544/547) Installing vte3 (0.60.2-r0)
+(545/547) Installing gnome-terminal (3.36.2-r0)
+(546/547) Installing android-tools (29.0.6-r0)
+(547/547) Installing .pmbootstrap (20200426.151328)
+Executing busybox-1.31.1-r14.trigger
+Executing eudev-3.2.9-r3.trigger
+Executing kmod-27-r0.trigger
+Executing fontconfig-2.13.1-r2.trigger
+Executing mkfontscale-1.2.1-r1.trigger
+Executing postmarketos-mkinitfs-0.12.1-r0.trigger
+==> initramfs: creating /boot/initramfs-lts
+Scanning kernel module dependencies...
+NOTE: ** modprobe warnings below can be ignored ** if your device does not run the
+mainline kernel yet (most devices!) or if the related kernel options are enabled
+with 'y' instead of 'm' (module).
+ - deviceinfo: virtio_pci virtio_blk virtio-gpu virtio_input
+ - 00-default.modules: dm_crypt ext4 usb_f_rndis
+modprobe: WARNING: Module usb_f_rndis not found in directory /lib/modules/5.4.35-0-lts
+==> initramfs: creating /boot/initramfs-lts-extra
+Executing dbus-1.12.16-r4.trigger
+Executing ca-certificates-20191127-r2.trigger
+Executing glib-2.64.2-r3.trigger
+Executing postmarketos-base-3-r33.trigger
+Executing shared-mime-info-1.15-r0.trigger
+Executing gdk-pixbuf-2.40.0-r2.trigger
+Executing gtk-update-icon-cache-2.24.32-r1.trigger
+Executing desktop-file-utils-0.24-r0.trigger
+OK: 1312 MiB in 566 packages
+(066485) [18:17:44] (rootfs_qemu-aarch64) % apk --no-progress add postmarketos-base device-qemu-aarch64 device-qemu-aarch64-kernel-lts postmarketos-ui-plasma-mobile gnome-terminal android-tools
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+OK: 1312 MiB in 566 packages
+(066485) [18:17:45] (rootfs_qemu-aarch64) % apk --no-progress del .pmbootstrap
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/2) Purging libcanberra-gstreamer (0.30-r5)
+(2/2) Purging .pmbootstrap (20200426.151328)
+OK: 1312 MiB in 564 packages
+(066485) [18:17:47] (rootfs_qemu-aarch64) write /etc/os-release
+(066485) [18:17:47] % cd /home/jack/.local/var/pmbootstrap/cache_git/pmaports; git rev-parse HEAD
+f54c2b67c38ef9d15953d2355191558427abf0a3
+(066485) [18:17:47] (rootfs_qemu-aarch64) % mv /tmp/os-release /etc/os-release
+(066485) [18:17:47] (rootfs_qemu-aarch64) calculate depends of device-qemu-aarch64, device-qemu-aarch64-kernel-lts (pmbootstrap -v for details)
+(066485) [18:17:47] WARNING: aarch64 package 'polkit' installed version 0.116-r2 is newer, than the version in the repositories: 0.116-r1 See also: <https://postmarketos.org/warning-repo>
+(066485) [18:17:47] (rootfs_qemu-aarch64) install
+(066485) [18:17:47] (rootfs_qemu-aarch64) % apk --no-progress add -u --virtual .pmbootstrap mkinitfs
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/1) Installing .pmbootstrap (20200426.151749)
+OK: 1312 MiB in 565 packages
+(066485) [18:17:49] (rootfs_qemu-aarch64) % apk --no-progress add device-qemu-aarch64 device-qemu-aarch64-kernel-lts
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+OK: 1312 MiB in 565 packages
+(066485) [18:17:51] (rootfs_qemu-aarch64) % apk --no-progress del .pmbootstrap
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/1) Purging .pmbootstrap (20200426.151749)
+OK: 1312 MiB in 564 packages
+(066485) [18:17:52] (rootfs_qemu-aarch64) calculate depends of postmarketos-mkinitfs (pmbootstrap -v for details)
+(066485) [18:17:53] (rootfs_qemu-aarch64) calculate depends of  (pmbootstrap -v for details)
+(066485) [18:17:53] (rootfs_qemu-aarch64) mkinitfs lts
+(066485) [18:17:53] (rootfs_qemu-aarch64) % mkinitfs -o /boot/initramfs-lts 5.4.35-0-lts
+==> initramfs: creating /boot/initramfs-lts
+Scanning kernel module dependencies...
+NOTE: ** modprobe warnings below can be ignored ** if your device does not run the
+mainline kernel yet (most devices!) or if the related kernel options are enabled
+with 'y' instead of 'm' (module).
+ - deviceinfo: virtio_pci virtio_blk virtio-gpu virtio_input
+ - 00-default.modules: dm_crypt ext4 usb_f_rndis
+modprobe: WARNING: Module usb_f_rndis not found in directory /lib/modules/5.4.35-0-lts
+==> initramfs: creating /boot/initramfs-lts-extra
+(066485) [18:18:37]  *** SET LOGIN PASSWORD FOR: 'jack' ***
+(066485) [18:18:37] (rootfs_qemu-aarch64) % passwd jack
+New password: 
+Retype new password: 
+passwd: password updated successfully
+(066485) [18:19:10] (rootfs_qemu-aarch64) % passwd -l root
+passwd: password expiry information changed.
+(066485) [18:19:10] NOTE: No valid keymap specified for device
+(066485) [18:19:10] (rootfs_qemu-aarch64) % setup-timezone -z Europe/Helsinki
+(066485) [18:19:14] (rootfs_qemu-aarch64) % sh -c echo qemu > /etc/hostname
+(066485) [18:19:14] (rootfs_qemu-aarch64) % sed -i -e s/^127\.0\.0\.1.*/127.0.0.1\tqemu localhost.localdomain localhost/ /etc/hosts
+(066485) [18:19:14] *** (3/5) PREPARE INSTALL BLOCKDEVICE ***
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/var/cache/distfiles
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/var/cache/apk
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/usr/bin/qemu-aarch64-static
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/proc
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-rust
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-packages
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-git
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-ccache
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-abuild-config
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/keys
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/shm
+(066485) [18:19:14] % sudo umount /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev
+(066485) [18:19:15] % sudo du --summarize --block-size=1 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64
+1384378368	/home/jack/prog/pm/chroot_rootfs_qemu-aarch64
+(066485) [18:19:15] % sudo du --summarize --block-size=1 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/boot
+26091520	/home/jack/prog/pm/chroot_rootfs_qemu-aarch64/boot
+(066485) [18:19:15] % sudo du --summarize --block-size=1 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/home
+8192	/home/jack/prog/pm/chroot_rootfs_qemu-aarch64/home
+(066485) [18:19:15] (native) % busybox su pmos -c HOME=/home/pmos mkdir -p /home/pmos/rootfs
+(066485) [18:19:15] (native) create qemu-aarch64.img (1634M)
+(066485) [18:19:15] (native) % truncate -s 1634M /home/pmos/rootfs/qemu-aarch64.img
+(066485) [18:19:15] (native) mount /dev/install (qemu-aarch64.img)
+(066485) [18:19:15] (native) mount /home/pmos/rootfs/qemu-aarch64.img (loop)
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop0p2
+(066485) [18:19:15] % sudo mount --bind /dev/loop0p2 /home/jack/prog/pm/chroot_native//dev/loop0p2
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop0p1
+(066485) [18:19:15] % sudo mount --bind /dev/loop0p1 /home/jack/prog/pm/chroot_native//dev/loop0p1
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop7
+(066485) [18:19:15] % sudo mount --bind /dev/loop7 /home/jack/prog/pm/chroot_native//dev/loop7
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop6
+(066485) [18:19:15] % sudo mount --bind /dev/loop6 /home/jack/prog/pm/chroot_native//dev/loop6
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop5
+(066485) [18:19:15] % sudo mount --bind /dev/loop5 /home/jack/prog/pm/chroot_native//dev/loop5
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop4
+(066485) [18:19:15] % sudo mount --bind /dev/loop4 /home/jack/prog/pm/chroot_native//dev/loop4
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop3
+(066485) [18:19:15] % sudo mount --bind /dev/loop3 /home/jack/prog/pm/chroot_native//dev/loop3
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop2
+(066485) [18:19:15] % sudo mount --bind /dev/loop2 /home/jack/prog/pm/chroot_native//dev/loop2
+(066485) [18:19:15] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop1
+(066485) [18:19:15] % sudo mount --bind /dev/loop1 /home/jack/prog/pm/chroot_native//dev/loop1
+(066485) [18:19:16] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop0
+(066485) [18:19:16] % sudo mount --bind /dev/loop0 /home/jack/prog/pm/chroot_native//dev/loop0
+(066485) [18:19:16] % sudo touch /home/jack/prog/pm/chroot_native//dev/loop-control
+(066485) [18:19:16] % sudo mount --bind /dev/loop-control /home/jack/prog/pm/chroot_native//dev/loop-control
+(066485) [18:19:16] (native) % losetup -f /home/pmos/rootfs/qemu-aarch64.img
+(066485) [18:19:16] (native) % losetup --json --list
+{
+   "loopdevices": [
+      {"name":"/dev/loop0", "sizelimit":0, "offset":0, "autoclear":false, "ro":false, "back-file":"/home/pmos/rootfs/qemu-aarch64.img", "dio":false, "log-sec":512}
+   ]
+}
+(066485) [18:19:16] (native) % losetup --json --list
+{
+   "loopdevices": [
+      {"name":"/dev/loop0", "sizelimit":0, "offset":0, "autoclear":false, "ro":false, "back-file":"/home/pmos/rootfs/qemu-aarch64.img", "dio":false, "log-sec":512}
+   ]
+}
+(066485) [18:19:16] % sudo touch /home/jack/prog/pm/chroot_native/dev/install
+(066485) [18:19:16] % sudo mount --bind /dev/loop0 /home/jack/prog/pm/chroot_native/dev/install
+(066485) [18:19:16] (native) partition /dev/install (boot: 75M, root: the rest)
+(066485) [18:19:16] (native) % parted -s /dev/install mktable msdos
+(066485) [18:19:16] (native) % parted -s /dev/install mkpart primary ext2 2048s 75M
+(066485) [18:19:16] (native) % parted -s /dev/install mkpart primary 75M 100%
+(066485) [18:19:16] (native) % parted -s /dev/install set 1 boot on
+(066485) [18:19:16] (native) % losetup --json --list
+{
+   "loopdevices": [
+      {"name":"/dev/loop0", "sizelimit":0, "offset":0, "autoclear":false, "ro":false, "back-file":"/home/pmos/rootfs/qemu-aarch64.img", "dio":false, "log-sec":512}
+   ]
+}
+(066485) [18:19:16] % sudo touch /home/jack/prog/pm/chroot_native/dev/installp1
+(066485) [18:19:16] % sudo mount --bind /dev/loop0p1 /home/jack/prog/pm/chroot_native/dev/installp1
+(066485) [18:19:16] % sudo touch /home/jack/prog/pm/chroot_native/dev/installp2
+(066485) [18:19:16] % sudo mount --bind /dev/loop0p2 /home/jack/prog/pm/chroot_native/dev/installp2
+(066485) [18:19:17] (native) format /dev/installp2
+(066485) [18:19:17] (native) % mkfs.ext4 -O ^metadata_csum -F -q -L pmOS_root -N 100000 /dev/installp2
+(066485) [18:19:17] (native) mount /dev/installp2 to /mnt/install
+(066485) [18:19:17] (native) % mkdir -p /mnt/install
+(066485) [18:19:17] (native) % mount /dev/installp2 /mnt/install
+(066485) [18:19:17] (native) format /dev/installp1 (boot, ext2), mount to /mnt/install/boot
+(066485) [18:19:17] (native) % mkfs.ext2 -F -q -L pmOS_boot /dev/installp1
+(066485) [18:19:17] (native) % mkdir -p /mnt/install/boot
+(066485) [18:19:17] (native) % mount /dev/installp1 /mnt/install/boot
+(066485) [18:19:17] *** (4/5) FILL INSTALL BLOCKDEVICE ***
+(066485) [18:19:17] (native) copy rootfs_qemu-aarch64 to /mnt/install/
+(066485) [18:19:17] % sudo mkdir -p /home/jack/prog/pm/chroot_native/mnt/rootfs_qemu-aarch64
+(066485) [18:19:17] % sudo mount --bind /home/jack/prog/pm/chroot_rootfs_qemu-aarch64 /home/jack/prog/pm/chroot_native/mnt/rootfs_qemu-aarch64
+(066485) [18:19:17] % sudo rm /home/jack/prog/pm/chroot_native/mnt/rootfs_qemu-aarch64/usr/bin/qemu-aarch64-static
+(066485) [18:19:17] (native) % cd /mnt/rootfs_qemu-aarch64; cp -a bin tmp sys boot run opt usr etc proc lib mnt dev sbin var srv media root /mnt/install/
+(066485) [18:19:23] % sudo mkdir /home/jack/prog/pm/chroot_native/mnt/install/home
+(066485) [18:19:23] % sudo cp -a /home/jack/prog/pm/chroot_native/mnt/install/etc/skel /home/jack/prog/pm/chroot_native/mnt/install/home/jack
+(066485) [18:19:23] % sudo chown -R 10000 /home/jack/prog/pm/chroot_native/mnt/install/home/jack
+(066485) [18:19:23] % sudo cp /home/jack/prog/pm/config_apk_keys/alpine-devel@lists.alpinelinux.org-5243ef4b.rsa.pub /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/keys/
+(066485) [18:19:23] % sudo cp /home/jack/prog/pm/config_apk_keys/alpine-devel@lists.alpinelinux.org-58e4f17d.rsa.pub /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/keys/
+(066485) [18:19:23] % sudo cp /home/jack/prog/pm/config_apk_keys/build.postmarketos.org.rsa.pub /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/keys/
+(066485) [18:19:23] % sudo cp /home/jack/prog/pm/config_apk_keys/alpine-devel@lists.alpinelinux.org-5261cecb.rsa.pub /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/keys/
+(066485) [18:19:23] % sudo cp /home/jack/prog/pm/config_apk_keys/alpine-devel@lists.alpinelinux.org-524d27bb.rsa.pub /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/keys/
+(066485) [18:19:23] % sudo cp /home/jack/prog/pm/config_apk_keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/keys/
+(066485) [18:19:23] % sudo cp /home/jack/prog/pm/config_apk_keys/alpine-devel@lists.alpinelinux.org-58199dcc.rsa.pub /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/keys/
+(066485) [18:19:23] % sudo cp /home/jack/prog/pm/config_apk_keys/alpine-devel@lists.alpinelinux.org-58cbb476.rsa.pub /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/keys/
+(066485) [18:19:23] % sudo sed -i /\/mnt\/pmbootstrap-packages/d /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/repositories
+(066485) [18:19:23] % cat /home/jack/prog/pm/chroot_native/mnt/install/etc/apk/repositories
+http://postmarketos1.brixit.nl/postmarketos/master
+http://dl-cdn.alpinelinux.org/alpine/edge/main
+http://dl-cdn.alpinelinux.org/alpine/edge/community
+http://dl-cdn.alpinelinux.org/alpine/edge/testing
+(066485) [18:19:23] % sudo umount /home/jack/prog/pm/chroot_native/mnt/install/boot
+(066485) [18:19:24] % sudo umount /home/jack/prog/pm/chroot_native/mnt/install
+(066485) [18:19:24] (native) % losetup --json --list
+{
+   "loopdevices": [
+      {"name":"/dev/loop0", "sizelimit":0, "offset":0, "autoclear":false, "ro":false, "back-file":"/home/pmos/rootfs/qemu-aarch64.img", "dio":false, "log-sec":512}
+   ]
+}
+(066485) [18:19:25] (native) umount /dev/loop0
+(066485) [18:19:25] (native) % losetup -d /dev/loop0
+(066485) [18:19:25] *** (5/5) FLASHING TO DEVICE ***
+(066485) [18:19:25] Run the following to flash your installation to the target device:
+(066485) [18:19:25] * If the above steps do not work, you can also create symlinks to the generated files with 'pmbootstrap export' and flash outside of pmbootstrap.
+(066485) [18:19:25] NOTE: chroot is still active (use 'pmbootstrap shutdown' as necessary)
+(066485) [18:19:25] Done
+(086573) [18:19:36] (native) calculate depends of qemu, qemu-system-aarch64, qemu-ui-sdl, qemu-ui-gtk, mesa-gl, mesa-egl, mesa-dri-classic, mesa-dri-gallium, qemu-audio-alsa, qemu-audio-pa, qemu-audio-sdl (pmbootstrap -v for details)
+(086573) [18:19:37] so:libgbm.so.1: has multiple providers (mesa-git-gbm, mesa-gbm), picked shortest: mesa-gbm
+(086573) [18:19:37] so:libglapi.so.0: has multiple providers (mesa-git-glapi, mesa-glapi), picked shortest: mesa-glapi
+(086573) [18:19:37] so:libdbus-1.so.3: has multiple providers (dbus-elogind-libs, dbus-libs), picked shortest: dbus-libs
+(086573) [18:19:37] (native) install qemu qemu-system-aarch64 qemu-ui-sdl qemu-ui-gtk mesa-gl mesa-egl mesa-dri-classic mesa-dri-gallium qemu-audio-alsa qemu-audio-pa qemu-audio-sdl
+(086573) [18:19:37] (native) % apk --no-progress add -u --virtual .pmbootstrap qemu qemu-system-aarch64 qemu-ui-sdl qemu-ui-gtk mesa-gl mesa-egl mesa-dri-classic mesa-dri-gallium qemu-audio-alsa qemu-audio-pa qemu-audio-sdl libcap-ng libcap libcurl mesa-gbm glib gnutls nettle pixman virglrenderer libxkbcommon libaio libepoxy libgcc libjpeg-turbo lzo libpng libseccomp snappy spice-server libstdc++ libusb usbredir vde2-libs sdl2 libx11 cairo gtk+3.0 gdk-pixbuf libintl vte3 mesa libxdamage libxext libxfixes libxxf86vm libdrm expat mesa-glapi libxcb libxshmfence wayland-libs-client wayland-libs-server zstd-libs llvm10-libs libelf alsa-lib libpulse ca-certificates nghttp2-libs libffi pcre gmp p11-kit libtasn1 libunistring gst-plugins-base gstreamer lz4-libs opus orc libsasl openssl libxrender fontconfig freetype shared-mime-info gtk-update-icon-cache libxcomposite libxcursor libxi libxinerama libxrandr atk at-spi2-atk cairo-gobject cups-libs fribidi harfbuzz pango wayland-libs-cursor wayland-libs-egl tiff icu-libs pcre2 libpciaccess libxau libxdmcp libxml2 libbz2 fts xz-libs libasyncns dbus-libs libltdl libsndfile soxr speexdsp tdb-libs libxv cdparanoia-libs libogg libtheora libvorbis db pkgconf hicolor-icon-theme at-spi2-core avahi-libs graphite2 libxft libbsd flac libgomp libxtst
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+(1/126) Installing libcap-ng (0.7.10-r0)
+(2/126) Installing libcap (2.27-r0)
+(3/126) Installing ca-certificates (20191127-r2)
+(4/126) Installing nghttp2-libs (1.40.0-r0)
+(5/126) Installing libcurl (7.69.1-r0)
+(6/126) Installing mesa (20.0.5-r0)
+(7/126) Installing libpciaccess (0.16-r0)
+(8/126) Installing libdrm (2.4.101-r0)
+(9/126) Installing expat (2.2.9-r1)
+(10/126) Installing libffi (3.3-r1)
+(11/126) Installing wayland-libs-server (1.18.0-r4)
+(12/126) Installing mesa-gbm (20.0.5-r0)
+(13/126) Installing libintl (0.20.2-r0)
+(14/126) Installing pcre (8.44-r0)
+(15/126) Installing glib (2.64.2-r3)
+(16/126) Installing gmp (6.2.0-r0)
+(17/126) Installing nettle (3.5.1-r1)
+(18/126) Installing p11-kit (0.23.20-r5)
+(19/126) Installing libtasn1 (4.16.0-r1)
+(20/126) Installing libunistring (0.9.10-r0)
+(21/126) Installing gnutls (3.6.13-r0)
+(22/126) Installing pixman (0.40.0-r1)
+(23/126) Installing libxau (1.0.9-r0)
+(24/126) Installing libbsd (0.10.0-r0)
+(25/126) Installing libxdmcp (1.1.3-r0)
+(26/126) Installing libxcb (1.14-r0)
+(27/126) Installing libx11 (1.6.9-r0)
+(28/126) Installing libepoxy (1.5.4-r0)
+(29/126) Installing virglrenderer (0.8.2-r1)
+(30/126) Installing libxkbcommon (0.10.0-r1)
+(31/126) Installing qemu (4.2.0-r2)
+Executing qemu-4.2.0-r2.pre-install
+Executing qemu-4.2.0-r2.post-install
+*
+* If you want to run VM as unprivileged user and let Qemu create tunX devices,
+* then you must add that user to the group "qemu".
+* If you use KVM for hardware-assisted virtualization, then you may also need
+* to add that user to the group "kvm".
+*
+(32/126) Installing libaio (0.3.112-r1)
+(33/126) Installing libgcc (9.3.0-r1)
+(34/126) Installing libjpeg-turbo (2.0.4-r1)
+(35/126) Installing lzo (2.10-r2)
+(36/126) Installing libpng (1.6.37-r1)
+(37/126) Installing libseccomp (2.4.3-r0)
+(38/126) Installing libstdc++ (9.3.0-r1)
+(39/126) Installing snappy (1.1.8-r2)
+(40/126) Installing mesa-glapi (20.0.5-r0)
+(41/126) Installing wayland-libs-client (1.18.0-r4)
+(42/126) Installing libxshmfence (1.3-r0)
+(43/126) Installing mesa-egl (20.0.5-r0)
+(44/126) Installing libxdamage (1.1.5-r0)
+(45/126) Installing libxext (1.3.4-r0)
+(46/126) Installing libxfixes (5.0.3-r2)
+(47/126) Installing libxxf86vm (1.1.4-r2)
+(48/126) Installing mesa-gl (20.0.5-r0)
+(49/126) Installing libxv (1.0.11-r2)
+(50/126) Installing alsa-lib (1.2.2-r0)
+(51/126) Installing libxrender (0.9.10-r3)
+(52/126) Installing libbz2 (1.0.8-r1)
+(53/126) Installing freetype (2.10.1-r0)
+(54/126) Installing fontconfig (2.13.1-r2)
+(55/126) Installing cairo (1.16.0-r2)
+(56/126) Installing cdparanoia-libs (10.2-r8)
+(57/126) Installing gstreamer (1.16.2-r2)
+(58/126) Installing libogg (1.3.4-r0)
+(59/126) Installing opus (1.3.1-r0)
+(60/126) Installing orc (0.4.31-r2)
+(61/126) Installing libxft (2.3.3-r0)
+(62/126) Installing fribidi (1.0.9-r0)
+(63/126) Installing graphite2 (1.3.14-r0)
+(64/126) Installing harfbuzz (2.6.5-r1)
+(65/126) Installing pango (1.44.7-r2)
+(66/126) Installing libtheora (1.1.1-r14)
+(67/126) Installing libvorbis (1.3.6-r2)
+(68/126) Installing wayland-libs-egl (1.18.0-r4)
+(69/126) Installing gst-plugins-base (1.16.2-r3)
+(70/126) Installing lz4-libs (1.9.2-r0)
+(71/126) Installing db (5.3.28-r1)
+(72/126) Installing libsasl (2.1.27-r6)
+(73/126) Installing spice-server (0.14.3-r0)
+(74/126) Installing libusb (1.0.23-r0)
+(75/126) Installing usbredir (0.8.0-r1)
+(76/126) Installing openssl (1.1.1g-r0)
+(77/126) Installing vde2-libs (2.3.2-r12)
+(78/126) Installing qemu-system-aarch64 (4.2.0-r2)
+(79/126) Installing sdl2 (2.0.12-r0)
+(80/126) Installing qemu-ui-sdl (4.2.0-r2)
+(81/126) Installing pkgconf (1.6.3-r2)
+(82/126) Installing xz-libs (5.2.5-r0)
+(83/126) Installing libxml2 (2.9.10-r3)
+(84/126) Installing shared-mime-info (1.15-r0)
+(85/126) Installing hicolor-icon-theme (0.17-r1)
+(86/126) Installing tiff (4.1.0-r0)
+(87/126) Installing gdk-pixbuf (2.40.0-r2)
+(88/126) Installing gtk-update-icon-cache (2.24.32-r1)
+(89/126) Installing libxcomposite (0.4.5-r0)
+(90/126) Installing libxcursor (1.2.0-r0)
+(91/126) Installing libxi (1.7.10-r0)
+(92/126) Installing libxinerama (1.1.4-r1)
+(93/126) Installing libxrandr (1.5.2-r0)
+(94/126) Installing atk (2.36.0-r0)
+(95/126) Installing libxtst (1.2.3-r3)
+(96/126) Installing dbus-libs (1.12.16-r4)
+(97/126) Installing at-spi2-core (2.36.0-r1)
+(98/126) Installing at-spi2-atk (2.34.2-r1)
+(99/126) Installing cairo-gobject (1.16.0-r2)
+(100/126) Installing avahi-libs (0.8-r0)
+(101/126) Installing cups-libs (2.2.12-r2)
+(102/126) Installing wayland-libs-cursor (1.18.0-r4)
+(103/126) Installing gtk+3.0 (3.24.18-r0)
+Executing gtk+3.0-3.24.18-r0.post-install
+(104/126) Installing icu-libs (67.1-r0)
+(105/126) Installing pcre2 (10.34-r1)
+(106/126) Installing vte3 (0.60.2-r0)
+(107/126) Installing qemu-ui-gtk (4.2.0-r2)
+(108/126) Installing zstd-libs (1.4.4-r1)
+(109/126) Installing mesa-dri-classic (20.0.5-r0)
+(110/126) Installing llvm10-libs (10.0.0-r2)
+(111/126) Installing fts (1.2.7-r1)
+(112/126) Installing libelf (0.179-r0)
+(113/126) Installing mesa-dri-gallium (20.0.5-r0)
+(114/126) Installing qemu-audio-alsa (4.2.0-r2)
+(115/126) Installing libasyncns (0.8-r1)
+(116/126) Installing libltdl (2.4.6-r7)
+(117/126) Installing flac (1.3.3-r0)
+(118/126) Installing libsndfile (1.0.28-r8)
+(119/126) Installing libgomp (9.3.0-r1)
+(120/126) Installing soxr (0.1.3-r2)
+(121/126) Installing speexdsp (1.2.0-r0)
+(122/126) Installing tdb-libs (1.4.3-r0)
+(123/126) Installing libpulse (13.0-r8)
+(124/126) Installing qemu-audio-pa (4.2.0-r2)
+(125/126) Installing qemu-audio-sdl (4.2.0-r2)
+(126/126) Installing .pmbootstrap (20200426.151938)
+Executing busybox-1.31.1-r14.trigger
+Executing ca-certificates-20191127-r2.trigger
+Executing glib-2.64.2-r3.trigger
+Executing shared-mime-info-1.15-r0.trigger
+Executing gdk-pixbuf-2.40.0-r2.trigger
+Executing gtk-update-icon-cache-2.24.32-r1.trigger
+OK: 449 MiB in 168 packages
+(086573) [18:20:11] (native) % apk --no-progress add qemu qemu-system-aarch64 qemu-ui-sdl qemu-ui-gtk mesa-gl mesa-egl mesa-dri-classic mesa-dri-gallium qemu-audio-alsa qemu-audio-pa qemu-audio-sdl
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+OK: 449 MiB in 168 packages
+(086573) [18:20:12] (native) % apk --no-progress del .pmbootstrap
+WARNING: Ignoring /mnt/pmbootstrap-packages/x86_64/APKINDEX.tar.gz: No such file or directory
+(1/1) Purging .pmbootstrap (20200426.151938)
+OK: 449 MiB in 167 packages
+(086573) [18:20:12] Running postmarketOS in QEMU VM (aarch64)
+(086573) [18:20:12] Kernel cmdline: console=tty1 console=ttyAMA0,38400n8 PMOS_NO_OUTPUT_REDIRECT PMOS_FORCE_PARTITION_RESIZE video=1024x768@60
+(086573) [18:20:12] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev
+(086573) [18:20:12] % sudo mount -t tmpfs -o size=1M,noexec,dev tmpfs /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev
+(086573) [18:20:12] % sudo mkdir -p /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/pts /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/shm
+(086573) [18:20:12] % sudo mount -t tmpfs -o nodev,nosuid,noexec tmpfs /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/shm
+(086573) [18:20:12] % sudo mknod -m 666 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/null c 1 3
+(086573) [18:20:12] % sudo mknod -m 666 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/zero c 1 5
+(086573) [18:20:12] % sudo mknod -m 666 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/full c 1 7
+(086573) [18:20:12] % sudo mknod -m 644 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/random c 1 8
+(086573) [18:20:12] % sudo mknod -m 644 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/dev/urandom c 1 9
+(086573) [18:20:12] % sudo mount --bind /proc /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/proc
+(086573) [18:20:12] % sudo mount --bind /home/jack/prog/pm/cache_apk_aarch64 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/var/cache/apk
+(086573) [18:20:12] % sudo mount --bind /home/jack/prog/pm/cache_ccache_aarch64 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-ccache
+(086573) [18:20:13] % sudo mount --bind /home/jack/prog/pm/cache_distfiles /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/var/cache/distfiles
+(086573) [18:20:13] % sudo mount --bind /home/jack/prog/pm/cache_git /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-git
+(086573) [18:20:13] % sudo mount --bind /home/jack/prog/pm/cache_rust /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-rust
+(086573) [18:20:13] % sudo mount --bind /home/jack/prog/pm/config_abuild /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-abuild-config
+(086573) [18:20:13] % sudo mount --bind /home/jack/prog/pm/config_apk_keys /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/etc/apk/keys
+(086573) [18:20:13] % sudo mount --bind /home/jack/prog/pm/packages /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/mnt/pmbootstrap-packages
+(086573) [18:20:13] % sudo touch /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/usr/bin/qemu-aarch64-static
+(086573) [18:20:13] % sudo mount --bind /home/jack/prog/pm/chroot_native/usr/bin/qemu-aarch64 /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/usr/bin/qemu-aarch64-static
+(086573) [18:20:13] (rootfs_qemu-aarch64) calculate depends of device-qemu-aarch64, device-qemu-aarch64-kernel-lts (pmbootstrap -v for details)
+(086573) [18:20:14] WARNING: aarch64 package 'polkit' installed version 0.116-r2 is newer, than the version in the repositories: 0.116-r1 See also: <https://postmarketos.org/warning-repo>
+(086573) [18:20:14] (rootfs_qemu-aarch64) install
+(086573) [18:20:14] (rootfs_qemu-aarch64) % apk --no-progress add -u --virtual .pmbootstrap mkinitfs
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/1) Installing .pmbootstrap (20200426.152015)
+OK: 1312 MiB in 565 packages
+(086573) [18:20:16] (rootfs_qemu-aarch64) % apk --no-progress add device-qemu-aarch64 device-qemu-aarch64-kernel-lts
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+OK: 1312 MiB in 565 packages
+(086573) [18:20:18] (rootfs_qemu-aarch64) % apk --no-progress del .pmbootstrap
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/1) Purging .pmbootstrap (20200426.152015)
+OK: 1312 MiB in 564 packages
+(086573) [18:20:19] WARNING: QEMU is not using KVM and will run slower!
+(086573) [18:20:19] % sudo chmod 666 /home/jack/prog/pm/chroot_native/home/pmos/rootfs/qemu-aarch64.img
+(086573) [18:20:19] Setting the rootfs size to 4G
+(086573) [18:20:19] % sudo truncate -s 4G /home/jack/prog/pm/chroot_native/home/pmos/rootfs/qemu-aarch64.img
+(086573) [18:20:19] Connect to the VM:
+(086573) [18:20:19] * (ssh) ssh -p 2222 jack@localhost
+(086573) [18:20:19] * (serial) in this console (stdout/stdin)
+(086573) [18:20:19] % QEMU_MODULE_DIR=/home/jack/prog/pm/chroot_native/usr/lib/qemu GBM_DRIVERS_PATH=/home/jack/prog/pm/chroot_native/usr/lib/xorg/modules/dri LIBGL_DRIVERS_PATH=/home/jack/prog/pm/chroot_native/usr/lib/xorg/modules/dri /home/jack/prog/pm/chroot_native/lib/ld-musl-x86_64.so.1 --library-path=/home/jack/prog/pm/chroot_native/lib:/home/jack/prog/pm/chroot_native/usr/lib:/home/jack/prog/pm/chroot_native/usr/lib/pulseaudio /home/jack/prog/pm/chroot_native/usr/bin/qemu-system-aarch64 -L /home/jack/prog/pm/chroot_native/usr/share/qemu/ -nodefaults -kernel /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/boot/vmlinuz-lts -initrd /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/boot/initramfs-lts -append 'console=tty1 console=ttyAMA0,38400n8 PMOS_NO_OUTPUT_REDIRECT PMOS_FORCE_PARTITION_RESIZE video=1024x768@60' -smp 4 -m 1024 -serial stdio -drive file=/home/jack/prog/pm/chroot_native/home/pmos/rootfs/qemu-aarch64.img,format=raw,if=virtio -device virtio-mouse-pci -device virtio-keyboard-pci -nic user,model=virtio-net-pci,hostfwd=tcp::2222-:22, -M virt -cpu cortex-a57 -device virtio-gpu-pci -display sdl,gl=on -show-cursor
+(086573) [18:20:19] *** output passed to pmbootstrap stdout, not to this log ***
+(086573) [18:52:42] NOTE: chroot is still active (use 'pmbootstrap shutdown' as necessary)
+(086573) [18:52:42] Done
+(093533) [18:52:43] (native) calculate depends of qemu, qemu-system-aarch64, qemu-ui-sdl, qemu-ui-gtk, mesa-gl, mesa-egl, mesa-dri-classic, mesa-dri-gallium, qemu-audio-alsa, qemu-audio-pa, qemu-audio-sdl (pmbootstrap -v for details)
+(093533) [18:52:45] Running postmarketOS in QEMU VM (aarch64)
+(093533) [18:52:45] Kernel cmdline: console=tty1 console=ttyAMA0,38400n8 PMOS_NO_OUTPUT_REDIRECT PMOS_FORCE_PARTITION_RESIZE video=1024x768@60
+(093533) [18:52:46] (rootfs_qemu-aarch64) calculate depends of device-qemu-aarch64, device-qemu-aarch64-kernel-lts (pmbootstrap -v for details)
+(093533) [18:52:47] WARNING: aarch64 package 'polkit' installed version 0.116-r2 is newer, than the version in the repositories: 0.116-r1 See also: <https://postmarketos.org/warning-repo>
+(093533) [18:52:47] (rootfs_qemu-aarch64) install
+(093533) [18:52:47] (rootfs_qemu-aarch64) % apk --no-progress add -u --virtual .pmbootstrap mkinitfs
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/1) Installing .pmbootstrap (20200426.155254)
+OK: 1312 MiB in 565 packages
+(093533) [18:52:55] (rootfs_qemu-aarch64) % apk --no-progress add device-qemu-aarch64 device-qemu-aarch64-kernel-lts
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+OK: 1312 MiB in 565 packages
+(093533) [18:52:56] (rootfs_qemu-aarch64) % apk --no-progress del .pmbootstrap
+WARNING: Ignoring /mnt/pmbootstrap-packages/aarch64/APKINDEX.tar.gz: No such file or directory
+(1/1) Purging .pmbootstrap (20200426.155254)
+OK: 1312 MiB in 564 packages
+(093533) [18:52:58] WARNING: QEMU is not using KVM and will run slower!
+(093533) [18:52:58] Setting the rootfs size to 4G
+(093533) [18:52:58] % sudo truncate -s 4G /home/jack/prog/pm/chroot_native/home/pmos/rootfs/qemu-aarch64.img
+(093533) [18:52:58] Connect to the VM:
+(093533) [18:52:58] * (ssh) ssh -p 2222 jack@localhost
+(093533) [18:52:58] * (serial) in this console (stdout/stdin)
+(093533) [18:52:58] % QEMU_MODULE_DIR=/home/jack/prog/pm/chroot_native/usr/lib/qemu GBM_DRIVERS_PATH=/home/jack/prog/pm/chroot_native/usr/lib/xorg/modules/dri LIBGL_DRIVERS_PATH=/home/jack/prog/pm/chroot_native/usr/lib/xorg/modules/dri /home/jack/prog/pm/chroot_native/lib/ld-musl-x86_64.so.1 --library-path=/home/jack/prog/pm/chroot_native/lib:/home/jack/prog/pm/chroot_native/usr/lib:/home/jack/prog/pm/chroot_native/usr/lib/pulseaudio /home/jack/prog/pm/chroot_native/usr/bin/qemu-system-aarch64 -L /home/jack/prog/pm/chroot_native/usr/share/qemu/ -nodefaults -kernel /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/boot/vmlinuz-lts -initrd /home/jack/prog/pm/chroot_rootfs_qemu-aarch64/boot/initramfs-lts -append 'console=tty1 console=ttyAMA0,38400n8 PMOS_NO_OUTPUT_REDIRECT PMOS_FORCE_PARTITION_RESIZE video=1024x768@60' -smp 4 -m 1024 -serial stdio -drive file=/home/jack/prog/pm/chroot_native/home/pmos/rootfs/qemu-aarch64.img,format=raw,if=virtio -device virtio-mouse-pci -device virtio-keyboard-pci -nic user,model=virtio-net-pci,hostfwd=tcp::2222-:22, -M virt -cpu cortex-a57 -device virtio-gpu-pci -display sdl,gl=on -show-cursor
+(093533) [18:52:58] *** output passed to pmbootstrap stdout, not to this log ***
+(093533) [13:58:01] NOTE: chroot is still active (use 'pmbootstrap shutdown' as necessary)
+(093533) [13:58:01] Done
